@@ -1,0 +1,29 @@
+<div class="tab-pane tab-content">
+  <div class="row-line-height">
+    <div class="table-view">
+      <table class="table">
+        <tr>
+          <td>Thumb</td>
+          <td>Name</td>
+          <td>Price</td>
+          <td>Buyer</td>
+          <td>Buy Account</td>
+          <td>Buyer Date</td>
+        </tr>
+        <tr *ngFor="let item of productList">
+          <td>
+            <img [src]="item.thumb" alt="">
+          </td>
+          <td>{{item.name}}</td>
+          <td>{{item.price}}</td>
+          <td>{{item.buyer}}</td>
+          <td>{{item.buyAccount}}</td>
+          <td>{{item.buyDate}}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div style="height: 30px;">
+    <button type="button" class="btn btn-warning" style="float: right;" (click)="itemListPageBack()">Item List Page Back</button>
+  </div>
+</div>

@@ -1,0 +1,77 @@
+
+html,body{
+  margin: 0px;
+  padding: 0px;
+}
+.row{
+  margin: 0px 0px;
+}
+.logo{
+  font-weight: bold;
+  font-size: 14px;
+}
+.user-info{
+  display: flex;
+}
+.user-name{
+  margin-right: 10px;
+}
+.logout{
+  color: #f0ad4e;
+  cursor: pointer;
+}
+.page-header{
+  margin: 0px;
+  padding-bottom: 0px;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 40px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+label{
+  width: 150px;
+}
+.center-block {
+display: block;
+margin-left: auto;
+margin-right: auto;
+}
+.row-line-height{
+  margin-bottom: 20px;
+}
+.unset-width{
+  width: unset;
+}
+.tab-content{
+  border:1px solid #ddd;
+  border-top: 0px;
+  padding: 20px 40px 20px;
+  box-sizing: border-box;
+}
+.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9{
+  padding: 0px;
+}
+.price-input{
+  width: 40%;
+  display: inline-block;
+  margin-left: 20px;
+}
+.link-hover{
+  cursor: pointer;
+  color: darkorange;
+}
+.table-view{
+  padding-top: 20px;
+  box-sizing: border-box;
+  border-top: 1px solid #ddd;
+}
+.center-set{
+  display: flex;
+  justify-content: center;
+}
+.input-flex{
+  display: flex;
+}

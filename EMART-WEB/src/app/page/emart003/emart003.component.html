@@ -1,0 +1,144 @@
+<div style="padding: 10px 10px 20px; box-sizing: border-box;" id="EMART003">
+
+  <div class="row-line-height">
+    <tabset>
+      <tab heading="Buy Item" id="buyItem">
+        <div class="tab-pane tab-content">
+          <div class="row-line-height input-flex">
+            <input type="text" class="form-control right-position" name="search">
+            <button type="button" class="btn btn-default">Search</button>
+          </div>
+          <div class="margin-bottom-set price-position-set">
+            <div class="input-flex margin-bottom-set">
+                <label class="unset-width">Start Price:</label>
+                <input type="text" class="form-control price-input" name="startPrice">
+            </div>
+            <div class="input-flex margin-bottom-set">
+                <label class="unset-width">End Price:</label>
+                <input type="text" class="form-control price-input" name="endPrice">
+            </div>
+            <button type="button" class="btn btn-default margin-bottom-set">Filter</button>
+          </div>
+          <div class="table-view">
+            <table class="table">
+              <tr>
+                <td>Thumb</td>
+                <td>Name</td>
+                <td>Price</td>
+                <td>Seller</td>
+                <td class="td-width">Buy Account</td>
+                <td class="td-width"></td>
+              </tr>
+              <tr *ngFor="let item of productList">
+                <td>
+                  <img style='width: 50px;height: 50px;display: block;border: 1px dashed;' src="../../images/food.jpg" alt=''>
+                </td>
+                <td>{{item.name}}</td>
+                <td>{{item.price}}</td>
+                <td>{{item.seller}}</td>
+                <td class="td-width"><input type="text" class="form-control"></td>
+                <td class="td-width td-link">
+                  <a href="javascript:void(0)" class="link-hover" (click)="openModal(item)">view details</a>
+                  <a style="margin-left: 10px" href="javascript:void(0)" class="link-hover" (click)="addToCart(item)">add to cart</a>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </tab>
+      <tab heading="Purchase History" id="purchaseHistory">
+        <div class="tab-pane tab-content">
+          <div class="row-line-height input-flex">
+            <input type="text" class="form-control right-position" name="search">
+            <button type="button" class="btn btn-default">Search</button>
+          </div>
+          <div class="margin-bottom-set price-position-set">
+            <div class="input-flex margin-bottom-set">
+                <label class="unset-width">Start Price:</label>
+                <input type="text" class="form-control price-input" name="startPrice">
+            </div>
+            <div class="input-flex margin-bottom-set">
+                <label class="unset-width">End Price:</label>
+                <input type="text" class="form-control price-input" name="endPrice">
+            </div>
+            <button type="button" class="btn btn-default margin-bottom-set">Filter</button>
+          </div>
+          <div class="table-view">
+            <table class="table">
+              <tr>
+                <td>Thumb</td>
+                <td>Name</td>
+                <td>Price</td>
+                <td>Seller</td>
+                <td>Buy Account</td>
+                <td>Buy Date</td>
+                <td class="td-width"></td>
+              </tr>
+              <tr *ngFor="let item of purchaseHistoryTable">
+                <td>
+                  <img style='width: 50px;height: 50px;display: block;border: 1px dashed;' [src]="item.thumb" alt=''>
+                </td>
+                <td>{{item.name}}</td>
+                <td>{{item.price}}</td>
+                <td>{{item.seller}}</td>
+                <td>{{item.buyAccount}}</td>
+                <td>{{item.buyDate}}</td>
+                <td class="td-width td-link">
+                  <a href="javascript:void(0)" class="link-hover" (click)="openModal(item)">view details</a>
+                  <a style="margin-left: 10px" href="javascript:void(0)" class="link-hover" (click)="addToCart(item)">add to cart</a>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </tab>
+      <tab heading="View Discounts" id="viewDiscounts">
+        <div class="tab-pane tab-content">
+          <div class="row-line-height input-flex">
+            <input type="text" class="form-control right-position" name="search">
+            <button type="button" class="btn btn-default">Search</button>
+          </div>
+          <div class="margin-bottom-set price-position-set">
+            <div class="input-flex margin-bottom-set">
+                <label class="unset-width">Start Price:</label>
+                <input type="text" class="form-control price-input" name="startPrice">
+            </div>
+            <div class="input-flex margin-bottom-set">
+                <label class="unset-width">End Price:</label>
+                <input type="text" class="form-control price-input" name="endPrice">
+            </div>
+            <button type="button" class="btn btn-default margin-bottom-set">Filter</button>
+          </div>
+          <div class="table-view">
+            <table class="table">
+              <tr>
+                <td>Thumb</td>
+                <td>Name</td>
+                <td>Price</td>
+                <td>Seller</td>
+                <td class="td-width">Buy Account</td>
+                <td class="td-width"></td>
+              </tr>
+              <tr *ngFor="let item of productList">
+                <td>
+                  <img style='width: 50px;height: 50px;display: block;border: 1px dashed;' [src]="item.thumb" alt=''>
+                </td>
+                <td>{{item.name}}</td>
+                <td>{{item.price}}</td>
+                <td>{{item.seller}}</td>
+                <td class="td-width"><input type="text" class="form-control"></td>
+                <td class="td-width td-link">
+                  <a href="javascript:void(0)" class="link-hover" (click)="openModal(item)">view details</a>
+                  <a style="margin-left: 10px" href="javascript:void(0)" class="link-hover" (click)="addToCart(item)">add to cart</a>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </tab>
+    </tabset>
+  </div>
+  <div style="height: 30px;">
+      <button type="button" class="btn btn-warning" style="float: right;" (click)="goToCart()">Go to cart</button>
+  </div>
+</div>

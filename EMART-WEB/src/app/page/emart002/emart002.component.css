@@ -1,0 +1,7 @@
+.signup-link{
+  display: flex;
+  justify-content: flex-end;
+}
+.btn-position-set{
+  padding-left: 102px;
+}

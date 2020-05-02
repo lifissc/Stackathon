@@ -1,0 +1,73 @@
+<div class="center-set">
+  <div>
+    <form class="form-inline">
+      <div class="row-line-height">
+        <label>User ID:</label>
+        <input type="text" class="form-control" name="userID" [(ngModel)]="userInfo.userID">
+      </div>
+      <div class="row-line-height">
+        <label>Username:</label>
+        <input type="text" class="form-control" name="username" [(ngModel)]="userInfo.username">
+      </div>
+      <div class="row-line-height">
+        <label>Password:</label>
+        <input type="password" class="form-control" name="password">
+      </div>
+      <div class="row-line-height btn-group" data-toggle="buttons">
+        <label>User Type:</label>
+        <label class="radio-inline active unset-width" (click)="showBuyerInput()">
+            <input type="radio" id="buyer" value="0" name="radioBtn" checked>
+            Buyer
+        </label>
+        <label class="radio-inline unset-width" (click)="showSellerInput()">
+            <input type="radio" id="seller" value="1" name="radioBtn">
+            Seller
+        </label>
+      </div>
+      <div id="buyerInput" *ngIf="inputShow">
+        <div class="row-line-height">
+            <label>Emailid:</label>
+            <input type="text" class="form-control" name="buyerEmailid">
+          </div>
+          <div class="row-line-height">
+            <label>Mobile number:</label>
+            <input type="text" class="form-control" name="buyerMobileNumber">
+          </div>
+      </div>
+      <div id="sellerInput" *ngIf="!inputShow">
+        <div class="row-line-height">
+            <label>Companyname:</label>
+            <input type="text" class="form-control" name="sellerCompanyname">
+          </div>
+          <div class="row-line-height">
+            <label>Company Description:</label>
+            <input type="text" class="form-control" name="CompanyDescription">
+          </div>
+          <div class="row-line-height">
+            <label>Postal_address:</label>
+            <input type="text" class="form-control" name="PostalAddress">
+          </div>
+          <div class="row-line-height">
+            <label>Website:</label>
+            <input type="text" class="form-control" name="sellerWebsite">
+          </div>
+          <div class="row-line-height">
+            <label>Emaillid:</label>
+            <input type="text" class="form-control" name="sellerEmaillid">
+          </div>
+          <div class="row-line-height">
+            <label>Mobile number:</label>
+            <input type="text" class="form-control" name="sellerMobileNumber">
+          </div>
+          <div class="row-line-height">
+            <label>Contact number:</label>
+            <input type="text" class="form-control" name="ContactNumber">
+          </div>
+      </div>
+      <div class="row-line-height">
+        <label></label>
+        <button type="button" class="btn btn-warning" (click)="signupClick()">Signup</button>
+      </div>
+    </form>
+  </div>
+</div>

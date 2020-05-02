@@ -1,0 +1,39 @@
+<div class="row modal-body" *ngIf="changePrdctInfo">
+  <div class="input-model-style">
+    <div class="row-line-height">
+      <label>Category:</label>
+      <input type="text" class="form-control" name="category" [(ngModel)]="changePrdctInfo.category">
+    </div>
+    <div class="row-line-height">
+      <label>Sub Category:</label>
+      <input type="text" class="form-control" name="subCategory" [(ngModel)]="changePrdctInfo.subCategory">
+    </div>
+    <div class="row-line-height">
+      <label>Item Name:</label>
+      <input type="password" class="form-control" name="name" [(ngModel)]="changePrdctInfo.name">
+    </div>
+    <div class="row-line-height">
+      <label>Price:</label>
+      <input type="text" class="form-control" name="price" [(ngModel)]="changePrdctInfo.price">
+    </div>
+    <div class="row-line-height">
+      <label>Account:</label>
+      <input type="text" class="form-control" name="amount" [(ngModel)]="changePrdctInfo.amount">
+    </div>
+    <div class="row-line-height">
+      <label>Thumb:</label>
+      <input type="text" class="form-control" name="thumb" [(ngModel)]="changePrdctInfo.thumb">
+    </div>
+    <div class="row-line-height">
+      <label>Discount:</label>
+      <input type="text" class="form-control" name="discount" [(ngModel)]="changePrdctInfo.discount">
+    </div>
+    <div class="row-line-height">
+      <label>Description:</label>
+      <input type="text" class="form-control" name="description" [(ngModel)]="changePrdctInfo.description">
+    </div>
+    <div class="row-line-height btn-position">
+      <button type="button" class="btn btn-warning" (click)="updateSet()">Update It!</button>
+    </div>
+  </div>
+</div>

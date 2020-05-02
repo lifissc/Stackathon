@@ -1,0 +1,52 @@
+.table-view .bootstrap-table.bootstrap3{
+  text-align: center;
+}
+.th-inner {
+  text-align: center;
+}
+tr {
+  height: 80px;
+  border-bottom: 1px dashed #000;
+}
+td {
+  padding-right: 10px;
+}
+.td-width{
+  width: 25%;
+}
+.tab-content {
+  border: 0px;
+}
+.glyphicon{
+  border-radius: 50%;
+  margin-right: 10px;
+  cursor: pointer;
+  border: 1px solid #000;
+}
+.account-style{
+  margin-right: 20px;
+}
+.apply-discount{
+  margin-right: 20px;
+}
+.tab-content .table-view{
+  padding-top: 0px;
+}
+.right-position{
+  margin-right: 20px;
+}
+.price-position-set{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.input-flex{
+  align-items: center;
+}
+.input-flex .unset-width{
+  width: 30%;
+}
+.margin-bottom-set{
+  margin-bottom: 10px;
+}

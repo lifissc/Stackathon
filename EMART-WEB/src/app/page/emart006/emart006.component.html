@@ -1,0 +1,44 @@
+
+<div class="tab-pane tab-content">
+  <div class="row-line-height">
+    <a style="margin-right: 20px;cursor: pointer;" (click)="addItem()"><u>Add Item</u></a>
+    <a [routerLink]="['/emart009']" routerLinkActive="router-link-active" ><u>Generate Report</u></a>
+  </div>
+  <div class="row-line-height input-flex">
+    <input type="text" class="form-control right-position" name="search">
+    <button type="button" class="btn btn-default">Search</button>
+  </div>
+  <div class="margin-bottom-set price-position-set">
+      <div class="input-flex margin-bottom-set">
+          <label class="unset-width">Start Price:</label>
+          <input type="text" class="form-control price-input" name="startPrice">
+      </div>
+      <div class="input-flex margin-bottom-set">
+          <label class="unset-width">End Price:</label>
+          <input type="text" class="form-control price-input" name="endPrice">
+      </div>
+      <button type="button" class="btn btn-default margin-bottom-set">Filter</button>
+  </div>
+  <div class="table-view">
+    <table class="table">
+      <tr>
+        <td>Thumb</td>
+        <td>Name</td>
+        <td>Price</td>
+        <td>Amount</td>
+        <td></td>
+      </tr>
+      <tr *ngFor="let item of productList">
+        <td>
+          <img style='width: 50px;height: 50px;' [src]="item.thumb" alt=''>
+        </td>
+        <td>{{item.name}}</td>
+        <td>{{item.price}}</td>
+        <td>{{item.amount}}</td>
+        <td>
+          <u class=" btn default link-hover" (click)="edit(item)">{{item.txt}}</u>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

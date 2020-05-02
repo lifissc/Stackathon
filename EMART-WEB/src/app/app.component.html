@@ -1,0 +1,8 @@
+<header class="page-header">
+  <div class="logo">eMart</div>
+  <div class="user-info" *ngIf="loginFlg">
+    <div class="user-name">{{userInfo.userID}}</div>
+    <div class="logout"><a href="" (click)="doLogout()"><u>logout</u></a></div>
+  </div>
+</header>
+<router-outlet></router-outlet>

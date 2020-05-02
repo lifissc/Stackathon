@@ -1,0 +1,55 @@
+<div class="tab-pane tab-content">
+  <div class="row-line-height">
+    <div class="table-view">
+      <table class="table">
+        <tr>
+          <td></td>
+          <td>Thumb</td>
+          <td>Name</td>
+          <td class="td-width">Account</td>
+          <td class="td-width"></td>
+        </tr>
+        <tr *ngFor="let item of productList;let i = index">
+          <td>
+            <input type="checkbox" [(ngModel)]="item.checked" (change)="checkEvent(item,i)">
+          </td>
+          <td>
+            <img [src]="item.thumb" alt="" style='width: 50px;height: 50px;display: block;border: 1px dashed;'>
+          </td>
+          <td>{{item.name}}</td>
+          <td>
+            <span class="account-style">{{item.buyAccount}}</span>
+            <span class="glyphicon glyphicon-plus" aria-hidden="true" (click)="addAccount(item)"></span>
+            <span class="glyphicon glyphicon-minus" aria-hidden="true" (click)="delAccount(item)"></span>
+          </td>
+          <td class="td-width">
+            <u class=" btn default link-hover" (click)="deletePrdct()">{{item.txt}}</u>
+          </td>
+        </tr>
+      </table>
+      <div>
+        <span>Total Tax:</span>
+        <span>xxxxxxxx</span>
+      </div>
+      <div class="row-line-height">
+        <span>Total Price:</span>
+        <span>xxxxxxxx</span>
+      </div>
+      <div class="row-line-height">
+        <button type="button" class="btn apply-discount" (click)="applyDiscountClick()">Apply Discount</button>
+        <label *ngIf="discountShow">
+          <input type="text">
+        </label>
+      </div>
+      <div>
+        <button type="button" class="btn" (click)="doCheckout()">Checkout</button>
+      </div>
+    </div>
+  </div>
+  <div style="height: 30px;">
+    <button type="button" class="btn btn-warning" style="float: right;" (click)="itemListPageBack()">Item List Page Back</button>
+  </div>
+</div>
+<div *ngFor="let alert of alerts" class="alert-position">
+  <alert [type]="alert.type" [dismissOnTimeout]="alert.timeout" (onClosed)="onClosed(alert)">{{ alert.msg }}</alert>
+</div>

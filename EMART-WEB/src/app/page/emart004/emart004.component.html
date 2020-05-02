@@ -1,0 +1,40 @@
+<div class="modal-body" *ngIf="productListInfo">
+  <div class="product-detail">
+    <div class="product-img">
+        <img [src]='productListInfo.thumb' class="thumb">
+    </div>
+    <div class="product-list">
+      <div class="row-line-height">
+          <label>Product ID:</label>
+          <span class="productID">{{productListInfo.productID}}</span>
+      </div>
+      <div class="row-line-height">
+          <label>Name:</label>
+          <span class="name">{{productListInfo.name}}</span>
+      </div>
+      <div class="row-line-height">
+          <label>Price:</label>
+          <span class="price">{{productListInfo.name}}</span>
+      </div>
+      <div class="row-line-height">
+          <label>Description:</label>
+          <span class="description">{{productListInfo.description}}</span>
+      </div>
+      <div class="row-line-height">
+          <label>Catalog:</label>
+          <span class="catalog">{{productListInfo.cataLog}}</span>
+      </div>
+      <div class="row-line-height">
+          <label>Seller:</label>
+          <span class="seller">{{productListInfo.seller}}</span>
+      </div>
+      <div class="row-line-height">
+          <label>Discount:</label>
+          <span class="discount">{{productListInfo.discount}}</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="model-foot">
+  <button type="button" class="btn btn-warning" (click)="addToCart(productListInfo)">Add to cart</button>
+</div>

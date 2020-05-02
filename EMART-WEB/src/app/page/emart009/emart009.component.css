@@ -1,0 +1,38 @@
+.tab-content {
+  border: 0px;
+}
+.table-view .bootstrap-table.bootstrap3{
+  text-align: center;
+}
+.th-inner {
+  text-align: center;
+}
+tr {
+  height: 80px;
+  border-bottom: 1px dashed #000;
+}
+td {
+  padding-right: 10px;
+  width: 25%;
+}
+td:first-child{
+  width: 10%;
+}
+.tab-pane.tab-content {
+  border: 0px;
+}
+.glyphicon{
+  border-radius: 50%;
+  margin-right: 10px;
+  cursor: pointer;
+  border: 1px solid #000;
+}
+.account-style{
+  margin-right: 20px;
+}
+.apply-discount{
+  margin-right: 20px;
+}
+.tab-content .table-view{
+  padding-top: 0px;
+}

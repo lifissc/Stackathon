@@ -1,0 +1,22 @@
+.row-line-height{
+  display: flex;
+}
+.row.modal-body{
+  padding-top: 40px;
+}
+.center-set{
+  display: flex;
+  justify-content: center;
+}
+.input-flex{
+  display: flex;
+}
+.input-model-style{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.btn-position{
+  width: 100%;
+  flex-direction: row-reverse;
+}

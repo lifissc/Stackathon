@@ -1,0 +1,40 @@
+#EMART003 .table-view .bootstrap-table.bootstrap3{
+  text-align: center;
+}
+#EMART003 .th-inner {
+  text-align: center;
+}
+#EMART003 tr {
+  height: 80px;
+  border-bottom: 1px dashed #000;
+}
+.td-width{
+  width: 25%;
+}
+
+.right-position{
+  margin-right: 20px;
+}
+.price-position-set{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.input-flex{
+  align-items: center;
+}
+.input-flex .unset-width{
+  width: 30%;
+}
+.margin-bottom-set{
+  margin-bottom: 10px;
+}
+.link-hover{
+  text-decoration: underline;
+  color: #f0ad4e;
+}
+.td-link{
+  width: 70px;
+  padding-left: 10px;
+}

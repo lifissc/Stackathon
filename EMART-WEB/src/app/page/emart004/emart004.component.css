@@ -1,0 +1,22 @@
+.product-detail{
+  display: flex;
+}
+.product-img{
+  height: 289px;
+  border: 1px dashed;
+  margin-right: 20px;
+  width: 50%;
+}
+.modal-body{
+  padding:40px;
+  padding-bottom:20px;
+}
+.row-line-height{
+  margin-bottom: 10px;
+}
+.model-foot{
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 40px;
+  padding-bottom: 40px;
+}

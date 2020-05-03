@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
-import { EMART004Component } from '../emart004/emart004.component';
+import { ITEMDETAILComponent } from '../itemDetail/itemDetail.component';
 import { ComponentService } from '../../component.service';
 
 @Component({
-  selector: 'app-emart003',
-  templateUrl: './emart003.component.html',
-  styleUrls: ['./emart003.component.css', '../../app.component.css']
+  selector: 'app-itemListBuyer',
+  templateUrl: './itemListBuyer.component.html',
+  styleUrls: ['./itemListBuyer.component.css', '../../app.component.css']
 })
-export class EMART003Component implements OnInit {
+export class ITEMLISTBUYERComponent implements OnInit {
   productList: any = [
     {
         thumb: '',
@@ -88,7 +88,7 @@ export class EMART003Component implements OnInit {
   ngOnInit(): void {
   }
   goToCart() {
-    this.router.navigate(['/emart005'])
+    this.router.navigate(['/itemCart'])
   }
   addToCart(item) {
   }
@@ -96,6 +96,6 @@ export class EMART003Component implements OnInit {
     const initialState = {
       prdctInfo: item
     };
-    this.modalRef = this.modalService.show(EMART004Component, {initialState});
+    this.modalRef = this.modalService.show(ITEMDETAILComponent, {initialState});
   }
 }

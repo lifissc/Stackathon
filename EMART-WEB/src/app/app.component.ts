@@ -25,6 +25,6 @@ export class AppComponent {
   }
   doLogout() {
     this.componentService.setLoginFlg(false);
-    this.router.navigate(['/emart002'])
+    this.router.navigate(['/login'])
   }
 }

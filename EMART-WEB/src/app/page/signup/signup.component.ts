@@ -3,11 +3,11 @@ import {Router} from '@angular/router'
 import { ComponentService } from '../../component.service';
 
 @Component({
-  selector: 'app-emart001',
-  templateUrl: './emart001.component.html',
-  styleUrls: ['./emart001.component.css', '../../app.component.css']
+  selector: 'app-signup',
+  templateUrl: './signup.component.html',
+  styleUrls: ['./signup.component.css', '../../app.component.css']
 })
-export class EMART001Component {
+export class SIGNUPComponent {
   public inputShow : Boolean;
   userInfo:any = {
     userID: ''
@@ -27,9 +27,9 @@ export class EMART001Component {
     this.componentService.setLoginFlg(true);
     this.componentService.setUserInfo(this.userInfo)
     if (!this.inputShow) {
-      this.router.navigate(['/emart006'])
+      this.router.navigate(['/itemListSeller'])
     } else {
-      this.router.navigate(['/emart003'])
+      this.router.navigate(['/itemListBuyer'])
     }
   }
 }

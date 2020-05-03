@@ -1,12 +1,12 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+import { BsModalService, BsModalRef } from 'src/app/page/itemAdd/node_modules/src/app/page/itemListSeller/node_modules/src/app/page/itemDetail/node_modules/src/app/page/itemListBuyer/node_modules/ngx-bootstrap/modal';
 
 @Component({
-  selector: 'app-emart008',
-  templateUrl: './emart008.component.html',
-  styleUrls: ['./emart008.component.css', '../../app.component.css']
+  selector: 'app-itemUpdate',
+  templateUrl: './itemUpdate.component.html',
+  styleUrls: ['./itemUpdate.component.css', '../../app.component.css']
 })
-export class EMART008Component implements OnInit {
+export class ITEMUPDATEComponent implements OnInit {
   // @Output() private getPrdctList = new EventEmitter<Object>()
   prdctInfo?: any;
   changePrdctInfo: any = {

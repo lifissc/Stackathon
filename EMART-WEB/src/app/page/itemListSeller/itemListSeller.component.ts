@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
-import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
-import { EMART007Component } from '../emart007/emart007.component';
-import { EMART008Component } from '../emart008/emart008.component';
+import { BsModalService, BsModalRef } from 'src/app/page/itemDetail/node_modules/src/app/page/itemListBuyer/node_modules/ngx-bootstrap/modal';
+import { ITEMADDComponent } from '../itemAdd/itemAdd.component';
+import { ITEMUPDATEComponent } from '../itemUpdate/itemUpdate.component';
 import { ComponentService } from '../../component.service';
 
 @Component({
-  selector: 'app-emart006',
-  templateUrl: './emart006.component.html',
-  styleUrls: ['./emart006.component.css', '../../app.component.css']
+  selector: 'app-itemListSeller',
+  templateUrl: './itemListSeller.component.html',
+  styleUrls: ['./itemListSeller.component.css', '../../app.component.css']
 })
-export class EMART006Component implements OnInit {
+export class ITEMLISTSELLERComponent implements OnInit {
   public productList?: any;
   modalRef: BsModalRef;
   constructor(public router: Router,private modalService: BsModalService, private componentService: ComponentService) { }
@@ -56,14 +56,14 @@ export class EMART006Component implements OnInit {
     ]
   }
   edit(item) {
-    // to emart008
+    // to itemUpdate
     const initialState = {
       prdctInfo: item
     };
-    this.modalRef = this.modalService.show(EMART008Component, {initialState});
+    this.modalRef = this.modalService.show(ITEMUPDATEComponent, {initialState});
   }
   addItem() {
-    // to emart007
-    this.modalRef = this.modalService.show(EMART007Component);
+    // to itemAdd
+    this.modalRef = this.modalService.show(ITEMADDComponent);
   }
 }

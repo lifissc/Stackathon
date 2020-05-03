@@ -1,21 +1,22 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { LOGINComponent } from './emaloginrt002.component';
 import {RouterTestingModule} from "@angular/router/testing";
-import { EMART001Component } from './emart001.component';
+import { HttpClientModule } from "@angular/common/http"
 
-describe('EMART001Component', () => {
-  let component: EMART001Component;
-  let fixture: ComponentFixture<EMART001Component>;
+describe('LOGINComponent', () => {
+  let component: LOGINComponent;
+  let fixture: ComponentFixture<LOGINComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule],
-      declarations: [ EMART001Component ]
+      imports: [RouterTestingModule,HttpClientModule],
+      declarations: [LOGINComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(EMART001Component);
+    fixture = TestBed.createComponent(LOGINComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

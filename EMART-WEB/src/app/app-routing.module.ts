@@ -2,57 +2,57 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule,Routes } from '@angular/router'
 
-import { EMART002Component } from './page/emart002/emart002.component';
-import { EMART001Component } from './page/emart001/emart001.component';
-import { EMART003Component } from './page/emart003/emart003.component';
-import { EMART004Component } from './page/emart004/emart004.component';
-import { EMART005Component } from './page/emart005/emart005.component';
-import { EMART006Component } from './page/emart006/emart006.component';
-import { EMART007Component } from './page/emart007/emart007.component';
-import { EMART008Component } from './page/emart008/emart008.component';
-import { EMART009Component } from './page/emart009/emart009.component';
+import { LOGINComponent } from './page/login/login.component';
+import { SIGNUPComponent } from './page/signup/signup.component';
+import { ITEMLISTBUYERComponent } from './page/itemListBuyer/itemListBuyer.component';
+import { ITEMDETAILComponent } from './page/itemDetail/itemDetail.component';
+import { ITEMCARTComponent } from './page/itemCart/itemCart.component';
+import { ITEMLISTSELLERComponent } from './page/itemListSeller/itemListSeller.component';
+import { ITEMADDComponent } from './page/itemAdd/itemAdd.component';
+import { ITEMUPDATEComponent } from './page/itemUpdate/itemUpdate.component';
+import { ITEMSELLREPORTComponent } from './page/itemSellReport/itemSellReport.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/emart002',
+    redirectTo: '/login',
     pathMatch: 'full'
   },
   {
-    path: 'emart002',
-    component: EMART002Component,
+    path: 'login',
+    component: LOGINComponent,
   },
   {
-    path: 'emart001',
-    component: EMART001Component
+    path: 'signup',
+    component: SIGNUPComponent
   },
   {
-    path: 'emart003',
-    component: EMART003Component
+    path: 'itemListBuyer',
+    component: ITEMLISTBUYERComponent
   },
   {
-    path: 'emart004',
-    component: EMART004Component
+    path: 'itemDetail',
+    component: ITEMDETAILComponent
   },
   {
-    path: 'emart005',
-    component: EMART005Component
+    path: 'itemCart',
+    component: ITEMCARTComponent
   },
   {
-    path: 'emart006',
-    component: EMART006Component
+    path: 'itemListSeller',
+    component: ITEMLISTSELLERComponent
   },
   {
-    path: 'emart007',
-    component: EMART007Component
+    path: 'itemAdd',
+    component: ITEMADDComponent
   },
   {
-    path: 'emart008',
-    component: EMART008Component
+    path: 'itemUpdate',
+    component: ITEMUPDATEComponent
   },
   {
-    path: 'emart009',
-    component: EMART009Component
+    path: 'itemSellReport',
+    component: ITEMSELLREPORTComponent
   }
 ]
 

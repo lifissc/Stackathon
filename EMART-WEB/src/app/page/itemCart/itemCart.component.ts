@@ -4,11 +4,11 @@ import { ComponentService } from '../../component.service';
 import { AlertComponent } from 'ngx-bootstrap/alert/alert.component';
 
 @Component({
-  selector: 'app-emart005',
-  templateUrl: './emart005.component.html',
-  styleUrls: ['./emart005.component.css', '../../app.component.css']
+  selector: 'app-itemCart',
+  templateUrl: './itemCart.component.html',
+  styleUrls: ['./itemCart.component.css', '../../app.component.css']
 })
-export class EMART005Component implements OnInit {
+export class ITEMCARTComponent implements OnInit {
   alerts: any[] = [{
     type: '',
     msg: '',
@@ -43,7 +43,7 @@ export class EMART005Component implements OnInit {
   ngOnInit(): void {
   }
   itemListPageBack() {
-    this.router.navigate(['/emart003'])
+    this.router.navigate(['/itemListBuyer'])
   }
   deletePrdct() {}
   addAccount(row) {

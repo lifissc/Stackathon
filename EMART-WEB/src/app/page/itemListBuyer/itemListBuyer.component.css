@@ -1,10 +1,10 @@
-#EMART003 .table-view .bootstrap-table.bootstrap3{
+#itemListBuyer .table-view .bootstrap-table.bootstrap3{
   text-align: center;
 }
-#EMART003 .th-inner {
+#itemListBuyer .th-inner {
   text-align: center;
 }
-#EMART003 tr {
+#itemListBuyer tr {
   height: 80px;
   border-bottom: 1px dashed #000;
 }

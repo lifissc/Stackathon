@@ -4,11 +4,11 @@ import { ComponentService } from '../../component.service';
 import { LoginService } from '../../service/login.service'
 
 @Component({
-  selector: 'app-emart002',
-  templateUrl: './emart002.component.html',
-  styleUrls: ['./emart002.component.css', '../../app.component.css']
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css', '../../app.component.css']
 })
-export class EMART002Component implements OnInit {
+export class LOGINComponent implements OnInit {
   public userInfo:any = {
     userID:'',
     password:''
@@ -33,9 +33,9 @@ export class EMART002Component implements OnInit {
     )
 
     if (this.userInfo.userID === '0000001' || this.userInfo.userID === '0000002' || this.userInfo.userID === '0000003') {
-      this.router.navigate(['/emart003'])
+      this.router.navigate(['/itemListBuyer'])
     } else {
-      this.router.navigate(['/emart006'])
+      this.router.navigate(['/itemListSeller'])
     }
   }
 }

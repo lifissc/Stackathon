@@ -3,11 +3,11 @@ import {Router} from '@angular/router';
 import { ComponentService } from '../../component.service';
 
 @Component({
-  selector: 'app-emart009',
-  templateUrl: './emart009.component.html',
-  styleUrls: ['./emart009.component.css', '../../app.component.css']
+  selector: 'app-itemSellReport',
+  templateUrl: './itemSellReport.component.html',
+  styleUrls: ['./itemSellReport.component.css', '../../app.component.css']
 })
-export class EMART009Component implements OnInit {
+export class ITEMSELLREPORTComponent implements OnInit {
   productList?:any;
   constructor(public router: Router, private componentService: ComponentService) { }
 
@@ -40,6 +40,6 @@ export class EMART009Component implements OnInit {
     ]
   }
   itemListPageBack() {
-    this.router.navigate(['/emart006'])
+    this.router.navigate(['/itemListSeller'])
   }
 }

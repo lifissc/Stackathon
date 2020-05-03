@@ -5,15 +5,15 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 
-import { EMART002Component } from './page/emart002/emart002.component';
-import { EMART001Component } from './page/emart001/emart001.component';
-import { EMART003Component } from './page/emart003/emart003.component';
-import { EMART004Component } from './page/emart004/emart004.component';
-import { EMART005Component } from './page/emart005/emart005.component';
-import { EMART006Component } from './page/emart006/emart006.component';
-import { EMART007Component } from './page/emart007/emart007.component';
-import { EMART008Component } from './page/emart008/emart008.component';
-import { EMART009Component } from './page/emart009/emart009.component';
+import { LOGINComponent } from './page/login/login.component';
+import { SIGNUPComponent } from './page/signup/signup.component';
+import { ITEMLISTBUYERComponent } from './page/itemListBuyer/itemListBuyer.component';
+import { ITEMDETAILComponent } from './page/itemDetail/itemDetail.component';
+import { ITEMCARTComponent } from './page/itemCart/itemCart.component';
+import { ITEMLISTSELLERComponent } from './page/itemListSeller/itemListSeller.component';
+import { ITEMADDComponent } from './page/itemAdd/itemAdd.component';
+import { ITEMUPDATEComponent } from './page/itemUpdate/itemUpdate.component';
+import { ITEMSELLREPORTComponent } from './page/itemSellReport/itemSellReport.component';
 
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { TabsModule } from 'ngx-bootstrap/tabs';
@@ -26,15 +26,15 @@ import { AlertModule } from 'ngx-bootstrap/alert';
 @NgModule({
   declarations: [
     AppComponent,
-    EMART002Component,
-    EMART001Component,
-    EMART003Component,
-    EMART004Component,
-    EMART005Component,
-    EMART006Component,
-    EMART007Component,
-    EMART008Component,
-    EMART009Component,
+    LOGINComponent,
+    SIGNUPComponent,
+    ITEMLISTBUYERComponent,
+    ITEMDETAILComponent,
+    ITEMCARTComponent,
+    ITEMLISTSELLERComponent,
+    ITEMADDComponent,
+    ITEMUPDATEComponent,
+    ITEMSELLREPORTComponent,
     ProductComponent
   ],
   imports: [

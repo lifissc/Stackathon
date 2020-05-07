@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.simplemall.micro.serv.prd.mapper.SubcategoryMapper" >
+  <resultMap id="BaseResultMap" type="com.simplemall.micro.serv.common.bean.product.Subcategory" >
+    <id column="subcategory_id" property="subcategoryId" jdbcType="VARCHAR" />
+    <result column="subcategory_name" property="subcategoryName" jdbcType="VARCHAR" />
+    <result column="brief_details" property="briefDetails" jdbcType="VARCHAR" />
+    <result column="category_id" property="categoryId" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    subcategory_id, subcategory_name, brief_details, category_id
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.simplemall.micro.serv.common.bean.product.SubcategoryExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from tb_subcategory
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from tb_subcategory
+    where subcategory_id = #{subcategoryId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from tb_subcategory
+    where subcategory_id = #{subcategoryId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.simplemall.micro.serv.common.bean.product.Subcategory" >
+    insert into tb_subcategory (subcategory_id, subcategory_name, brief_details, 
+      category_id)
+    values (#{subcategoryId,jdbcType=VARCHAR}, #{subcategoryName,jdbcType=VARCHAR}, #{briefDetails,jdbcType=VARCHAR}, 
+      #{categoryId,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.simplemall.micro.serv.common.bean.product.Subcategory" >
+    insert into tb_subcategory
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="subcategoryId != null" >
+        subcategory_id,
+      </if>
+      <if test="subcategoryName != null" >
+        subcategory_name,
+      </if>
+      <if test="briefDetails != null" >
+        brief_details,
+      </if>
+      <if test="categoryId != null" >
+        category_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="subcategoryId != null" >
+        #{subcategoryId,jdbcType=VARCHAR},
+      </if>
+      <if test="subcategoryName != null" >
+        #{subcategoryName,jdbcType=VARCHAR},
+      </if>
+      <if test="briefDetails != null" >
+        #{briefDetails,jdbcType=VARCHAR},
+      </if>
+      <if test="categoryId != null" >
+        #{categoryId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.simplemall.micro.serv.common.bean.product.Subcategory" >
+    update tb_subcategory
+    <set >
+      <if test="subcategoryName != null" >
+        subcategory_name = #{subcategoryName,jdbcType=VARCHAR},
+      </if>
+      <if test="briefDetails != null" >
+        brief_details = #{briefDetails,jdbcType=VARCHAR},
+      </if>
+      <if test="categoryId != null" >
+        category_id = #{categoryId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where subcategory_id = #{subcategoryId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.simplemall.micro.serv.common.bean.product.Subcategory" >
+    update tb_subcategory
+    set subcategory_name = #{subcategoryName,jdbcType=VARCHAR},
+      brief_details = #{briefDetails,jdbcType=VARCHAR},
+      category_id = #{categoryId,jdbcType=VARCHAR}
+    where subcategory_id = #{subcategoryId,jdbcType=VARCHAR}
+  </update>
+</mapper>

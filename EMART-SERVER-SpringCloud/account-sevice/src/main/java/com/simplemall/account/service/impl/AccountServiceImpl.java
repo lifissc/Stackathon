@@ -8,11 +8,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.simplemall.account.dal.AccAddressMapper;
 import com.simplemall.account.dal.AccountMapper;
 import com.simplemall.account.service.IAccountService;
-import com.simplemall.micro.serv.common.bean.account.AccAddress;
-import com.simplemall.micro.serv.common.bean.account.AccAddressCriteria;
 import com.simplemall.micro.serv.common.bean.account.Account;
 import com.simplemall.micro.serv.common.bean.account.AccountCriteria;
 
@@ -24,46 +21,38 @@ public class AccountServiceImpl implements IAccountService {
 	@Autowired
 	AccountMapper accountMapper;
 
-	@Autowired
-	AccAddressMapper addressMapper;
-
 	@Override
-	public AccAddress getAccAddress(String tid) {
-		return null;
-	}
-
-	@Override
-	public Account login(String phone, String password) {
+	public Account login(String user_id, String password) {
 		AccountCriteria criteria = new AccountCriteria();
-		criteria.createCriteria().andPhoneEqualTo(phone).andPasswordEqualTo(password);
+		criteria.createCriteria().andUserIdEqualTo(user_id).andPasswordEqualTo(password);
 		List<Account> list = accountMapper.selectByExample(criteria);
-		logger.info("{}登陆成功!",phone);
+		logger.info("{}Login Success!",user_id);
 		return CollectionUtils.isNotEmpty(list)?list.get(0):new Account();
 	}
 
 	@Override
-	public boolean signup(String phone, String password) {
+	public boolean signup(String user_id, String user_name, String email, String password, String role_type, String mobile_number, String company_name, String company_description, String postal_address, String website) {
 		Account account = new Account();
-		account.setPhone(phone);
+		account.setUserId(user_id);
+		account.setUserName(user_name);
 		account.setPassword(password);
+		account.setEmail(email);
+		account.setRoleType(role_type);
+		account.setCompanyName(company_name);
+		account.setCompanyDescription(company_description);
+		account.setMobileNumber(mobile_number);
+		account.setPostalAddress(postal_address);
+		account.setWebsite(website);
 		AccountCriteria example = new AccountCriteria();
-		example.createCriteria().andPhoneEqualTo(phone);
+		example.createCriteria().andUserIdEqualTo(user_id);
 		List<Account> list = accountMapper.selectByExample(example);
 		if (CollectionUtils.isNotEmpty(list)) {
-			logger.warn("{}-用户已存在，请选择其它用户名!",phone);
+			logger.warn("{}-This User is alreday present!",user_id);
 			return false;
 		}
 		int result = accountMapper.insertSelective(account);
-		logger.info("{}注册成功！",phone);
+		logger.info("{} Signup Success！",user_id);
 		return result > 0 ? true : false;
-	}
-
-	@Override
-	public List<AccAddress> getAddressList(String accountId) {
-		AccAddressCriteria criteria = new AccAddressCriteria();
-		criteria.createCriteria().andAccountIdEqualTo(accountId);
-		List<AccAddress> list = addressMapper.selectByExample(criteria);
-		return list;
 	}
 
 }

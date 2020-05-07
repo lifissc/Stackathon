@@ -27,7 +27,7 @@ public class SqlSessionFactoryConfig implements TransactionManagementConfigurer 
     private DataSourceProperties dataSourceProperties;
 
     /**
-     * 创建sqlSessionFactoryBean 
+     * create sqlSessionFactoryBean 
      * @return
      * @throws Exception
      */

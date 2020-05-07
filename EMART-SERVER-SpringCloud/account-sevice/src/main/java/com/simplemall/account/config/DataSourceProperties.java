@@ -3,9 +3,9 @@ package com.simplemall.account.config;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 /**
- * 数据库配置
+ * DataBase Configuration
  * 
- * @author i1093108915@yeah.net
+ * @author Li Feng
  *
  */
 @ConfigurationProperties(prefix = DataSourceProperties.DS, ignoreUnknownFields = false)

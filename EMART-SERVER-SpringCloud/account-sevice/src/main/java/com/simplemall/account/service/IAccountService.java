@@ -1,35 +1,10 @@
 package com.simplemall.account.service;
 
-import java.util.List;
-
-import com.simplemall.micro.serv.common.bean.account.AccAddress;
 import com.simplemall.micro.serv.common.bean.account.Account;
 
 public interface IAccountService {
 
-	/**
-	 * @param phone
-	 * @param password
-	 * @return
-	 */
-	Account login(String phone, String password);
+	Account login(String user_id, String password);
 	
-	/**
-	 * @param phone
-	 * @param password
-	 * @return
-	 */
-	boolean signup(String phone, String password);
-	
-	/**
-	 * @param tid
-	 * @return
-	 */
-	AccAddress getAccAddress(String tid);
-	
-	/**
-	 * @param accountId
-	 * @return
-	 */
-	List<AccAddress> getAddressList(String accountId);
+	boolean signup(String user_id, String user_name, String email, String password, String role_type, String mobile_number, String company_name, String company_description, String postal_address, String website);
 }

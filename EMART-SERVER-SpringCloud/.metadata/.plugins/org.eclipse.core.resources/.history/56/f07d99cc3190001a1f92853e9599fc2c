@@ -1,0 +1,21 @@
+package com.simplemall.account.dal;
+
+import com.simplemall.micro.serv.common.bean.account.Account;
+import com.simplemall.micro.serv.common.bean.account.AccountCriteria;
+
+public interface AccountMapper {
+
+    /**
+     * 插入数据库记录
+     *
+     * @param record
+     */
+    int insertSelective(Account record);
+
+    /**
+     * 根据条件查询列表
+     *
+     * @param example
+     */
+    Account selectByExample(AccountCriteria example);
+}

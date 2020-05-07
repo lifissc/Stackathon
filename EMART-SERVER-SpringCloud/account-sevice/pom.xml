@@ -9,7 +9,7 @@
 	<groupId>com.simplemall.micro.serv.account</groupId>
 	<artifactId>account-sevice</artifactId>
 	<name>accountServ</name>
-	<description>用户服务</description>
+	<description>User Service</description>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -124,7 +124,6 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<configuration>
-					<!-- 略过整个单元测试的执行，不推荐 -->
 					<skip>true</skip>
 				</configuration>
 			</plugin>

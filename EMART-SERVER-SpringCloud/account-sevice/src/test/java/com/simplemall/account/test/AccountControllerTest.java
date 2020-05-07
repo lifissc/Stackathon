@@ -32,10 +32,10 @@ public class AccountControllerTest {
 	@Test
 	@Rollback
 	public void test() {
-		String phone = "14534343434";
-		String password = "23123123";
+		String userid = "100003";
+		String password = "123456";
 		Account account = new Account();
-		account.setPhone(phone);
+		account.setUserId(userid);
 		account.setPassword(password);
 		int apiResult = accountMapper.insertSelective(account);
 		Assert.assertTrue(apiResult>0);

@@ -1,280 +1,103 @@
 package com.simplemall.micro.serv.common.bean.account;
 
-import java.util.Date;
-
 public class Account {
-    /**
-     * 
-     * 表 : tb_acc_account
-     * 对应字段 : tid
-     */
-    private String tid;
+    private String userId;
 
-    /**
-     * 手机号
-     * 表 : tb_acc_account
-     * 对应字段 : phone
-     */
-    private String phone;
+    private String userName;
 
-    /**
-     * 邮件
-     * 表 : tb_acc_account
-     * 对应字段 : email
-     */
     private String email;
 
-    /**
-     * 密码
-     * 表 : tb_acc_account
-     * 对应字段 : password
-     */
     private String password;
 
-    /**
-     * 
-     * 表 : tb_acc_account
-     * 对应字段 : create_by
-     */
-    private String createBy;
+    private String roleType;
 
-    /**
-     * 
-     * 表 : tb_acc_account
-     * 对应字段 : create_date
-     */
-    private Date createDate;
+    private String mobileNumber;
 
-    /**
-     * 
-     * 表 : tb_acc_account
-     * 对应字段 : update_by
-     */
-    private String updateBy;
+    private String companyName;
 
-    /**
-     * 
-     * 表 : tb_acc_account
-     * 对应字段 : update_date
-     */
-    private Date updateDate;
+    private String companyDescription;
 
-    /**
-     * 
-     * 表 : tb_acc_account
-     * 对应字段 : remark
-     */
-    private String remark;
+    private String postalAddress;
 
-    /**
-     * 
-     * 表 : tb_acc_account
-     * 对应字段 : version
-     */
-    private Integer version;
+    private String website;
 
-    /**
-     * 
-     * 表 : tb_acc_account
-     * 对应字段 : state
-     */
-    private Integer state;
-
-    /**
-     * get method 
-     *
-     * @return tb_acc_account.tid：
-     */
-    public String getTid() {
-        return tid;
+    public String getUserId() {
+        return userId;
     }
 
-    /**
-     * set method 
-     *
-     * @param tid  
-     */
-    public void setTid(String tid) {
-        this.tid = tid == null ? null : tid.trim();
+    public void setUserId(String userId) {
+        this.userId = userId == null ? null : userId.trim();
     }
 
-    /**
-     * get method 
-     *
-     * @return tb_acc_account.phone：手机号
-     */
-    public String getPhone() {
-        return phone;
+    public String getUserName() {
+        return userName;
     }
 
-    /**
-     * set method 
-     *
-     * @param phone  手机号
-     */
-    public void setPhone(String phone) {
-        this.phone = phone == null ? null : phone.trim();
+    public void setUserName(String userName) {
+        this.userName = userName == null ? null : userName.trim();
     }
 
-    /**
-     * get method 
-     *
-     * @return tb_acc_account.email：邮件
-     */
     public String getEmail() {
         return email;
     }
 
-    /**
-     * set method 
-     *
-     * @param email  邮件
-     */
     public void setEmail(String email) {
         this.email = email == null ? null : email.trim();
     }
 
-    /**
-     * get method 
-     *
-     * @return tb_acc_account.password：密码
-     */
     public String getPassword() {
         return password;
     }
 
-    /**
-     * set method 
-     *
-     * @param password  密码
-     */
     public void setPassword(String password) {
         this.password = password == null ? null : password.trim();
     }
 
-    /**
-     * get method 
-     *
-     * @return tb_acc_account.create_by：
-     */
-    public String getCreateBy() {
-        return createBy;
+    public String getRoleType() {
+        return roleType;
     }
 
-    /**
-     * set method 
-     *
-     * @param createBy  
-     */
-    public void setCreateBy(String createBy) {
-        this.createBy = createBy == null ? null : createBy.trim();
+    public void setRoleType(String roleType) {
+        this.roleType = roleType == null ? null : roleType.trim();
     }
 
-    /**
-     * get method 
-     *
-     * @return tb_acc_account.create_date：
-     */
-    public Date getCreateDate() {
-        return createDate;
+    public String getMobileNumber() {
+        return mobileNumber;
     }
 
-    /**
-     * set method 
-     *
-     * @param createDate  
-     */
-    public void setCreateDate(Date createDate) {
-        this.createDate = createDate;
+    public void setMobileNumber(String mobileNumber) {
+        this.mobileNumber = mobileNumber == null ? null : mobileNumber.trim();
     }
 
-    /**
-     * get method 
-     *
-     * @return tb_acc_account.update_by：
-     */
-    public String getUpdateBy() {
-        return updateBy;
+    public String getCompanyName() {
+        return companyName;
     }
 
-    /**
-     * set method 
-     *
-     * @param updateBy  
-     */
-    public void setUpdateBy(String updateBy) {
-        this.updateBy = updateBy == null ? null : updateBy.trim();
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName == null ? null : companyName.trim();
     }
 
-    /**
-     * get method 
-     *
-     * @return tb_acc_account.update_date：
-     */
-    public Date getUpdateDate() {
-        return updateDate;
+    public String getCompanyDescription() {
+        return companyDescription;
     }
 
-    /**
-     * set method 
-     *
-     * @param updateDate  
-     */
-    public void setUpdateDate(Date updateDate) {
-        this.updateDate = updateDate;
+    public void setCompanyDescription(String companyDescription) {
+        this.companyDescription = companyDescription == null ? null : companyDescription.trim();
     }
 
-    /**
-     * get method 
-     *
-     * @return tb_acc_account.remark：
-     */
-    public String getRemark() {
-        return remark;
+    public String getPostalAddress() {
+        return postalAddress;
     }
 
-    /**
-     * set method 
-     *
-     * @param remark  
-     */
-    public void setRemark(String remark) {
-        this.remark = remark == null ? null : remark.trim();
+    public void setPostalAddress(String postalAddress) {
+        this.postalAddress = postalAddress == null ? null : postalAddress.trim();
     }
 
-    /**
-     * get method 
-     *
-     * @return tb_acc_account.version：
-     */
-    public Integer getVersion() {
-        return version;
+    public String getWebsite() {
+        return website;
     }
 
-    /**
-     * set method 
-     *
-     * @param version  
-     */
-    public void setVersion(Integer version) {
-        this.version = version;
-    }
-
-    /**
-     * get method 
-     *
-     * @return tb_acc_account.state：
-     */
-    public Integer getState() {
-        return state;
-    }
-
-    /**
-     * set method 
-     *
-     * @param state  
-     */
-    public void setState(Integer state) {
-        this.state = state;
+    public void setWebsite(String website) {
+        this.website = website == null ? null : website.trim();
     }
 }

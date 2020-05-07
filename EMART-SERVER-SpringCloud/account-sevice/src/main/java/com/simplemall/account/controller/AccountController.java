@@ -10,12 +10,6 @@ import com.simplemall.account.service.IAccountService;
 import com.simplemall.micro.serv.common.bean.account.Account;
 import com.simplemall.micro.serv.common.constant.SystemConstants;
 
-/**
- * 个人账户
- * 
- * @author guooo
- *
- */
 @RestController
 @RequestMapping("/acc")
 public class AccountController {
@@ -23,29 +17,15 @@ public class AccountController {
 	@Autowired
 	IAccountService accountService;
 
-	/**
-	 * 登陆
-	 * 
-	 * @param phone
-	 * @param password
-	 * @return
-	 */
 	@RequestMapping(value = "login", method = {RequestMethod.GET,RequestMethod.POST})
-	public Account login(@RequestParam("phone") String phone, @RequestParam("password") String password) {
-		Account result = accountService.login(phone, password);
+	public Account login(@RequestParam("user_id") String user_id, @RequestParam("password") String password) {
+		Account result = accountService.login(user_id, password);
 		return result;
 	}
 
-	/**
-	 * 注册
-	 * 
-	 * @param phone
-	 * @param password
-	 * @return
-	 */
-	@RequestMapping(value = "signup", method = RequestMethod.GET)
-	public String signup(String phone, String password) {
-		boolean result = accountService.signup(phone, password);
+	@RequestMapping(value = "signup", method = RequestMethod.POST)
+	public String signup(String user_id, String user_name, String email, String password, String role_type, String mobile_number, String company_name, String company_description, String postal_address, String website) {
+		boolean result = accountService.signup(user_id, user_name, email, password, role_type, mobile_number, company_name, company_description, postal_address, website);
 		return result ? SystemConstants.Code.SUCCESS : SystemConstants.Code.FAIL;
 	}
 }

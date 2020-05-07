@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="admin-server"/>
+<aop-project name="product-service"/>
+<aop-project name="order-service"/>
+<aop-project name="account-sevice"/>
+<aop-project name="conf-server"/>
+<aop-project name="payment-service"/>
+<aop-project name="eureka-server"/>
+<aop-project name="common-module"/>
+</aop-reference-model>

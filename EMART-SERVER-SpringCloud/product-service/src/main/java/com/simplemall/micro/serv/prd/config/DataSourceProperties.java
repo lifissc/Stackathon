@@ -3,9 +3,9 @@ package com.simplemall.micro.serv.prd.config;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 /**
- * 数据库配置
+ * database configuration
  * 
- * @author i1093108915@yeah.net
+ * @author lifissc
  *
  */
 @ConfigurationProperties(prefix = DataSourceProperties.DS, ignoreUnknownFields = false)

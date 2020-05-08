@@ -26,11 +26,6 @@ public class SqlSessionFactoryConfig implements TransactionManagementConfigurer 
     @Autowired
     private DataSourceProperties dataSourceProperties;
 
-    /**
-     * 创建sqlSessionFactoryBean 
-     * @return
-     * @throws Exception
-     */
     @Bean(name = "sqlSessionFactory")
     public SqlSessionFactory createSqlSessionFactoryBean() throws Exception {
         SqlSessionFactoryBean bean = new SqlSessionFactoryBean();

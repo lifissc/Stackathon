@@ -1,0 +1,110 @@
+package com.simplemall.micro.serv.prd.service.impl;
+
+import java.util.List;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.simplemall.micro.serv.common.bean.account.Account;
+import com.simplemall.micro.serv.common.bean.account.AccountCriteria;
+import com.simplemall.micro.serv.common.bean.product.Category;
+import com.simplemall.micro.serv.common.bean.product.CategoryExample;
+import com.simplemall.micro.serv.common.bean.product.ProductDiscount;
+import com.simplemall.micro.serv.common.bean.product.ProductItem;
+import com.simplemall.micro.serv.common.bean.product.ProductItemExample;
+import com.simplemall.micro.serv.common.bean.product.Subcategory;
+import com.simplemall.micro.serv.common.bean.product.SubcategoryExample;
+import com.simplemall.micro.serv.prd.mapper.CategoryMapper;
+import com.simplemall.micro.serv.prd.mapper.ProductCartMapper;
+import com.simplemall.micro.serv.prd.mapper.ProductDiscountMapper;
+import com.simplemall.micro.serv.prd.mapper.ProductItemMapper;
+import com.simplemall.micro.serv.prd.mapper.SubcategoryMapper;
+import com.simplemall.micro.serv.prd.service.IPrdService;
+
+@Service
+public class PrdServiceImpl implements IPrdService {
+	private Logger logger = LoggerFactory.getLogger(PrdServiceImpl.class);
+	
+
+	@Autowired
+	ProductItemMapper prdInfoMapper;
+	CategoryMapper categoryMapper;
+	SubcategoryMapper subcategoryMapper;
+	ProductCartMapper productCartMapper;
+	ProductDiscountMapper productDiscountMapper;
+
+	@Override
+	public ProductItem getProductById(String itemId) {
+		ProductItem info = prdInfoMapper.selectByPrimaryKey(itemId);
+		logger.info("get puoduct info{}success!",itemId);
+		return info;
+	}
+
+	@Override
+	public List<ProductItem> queryPrdList() {
+		return prdInfoMapper.selectByExample(new ProductItemExample());
+	}
+
+	@Override
+	public List<Category> getCatagoryList() {
+		return categoryMapper.selectByExample(new CategoryExample());
+	}
+
+	@Override
+	public List<Subcategory> getSubCatagoryList(String categoryId) {
+		SubcategoryExample criteria = new SubcategoryExample();
+		criteria.createCriteria().andCategoryIdEqualTo(categoryId);
+		return subcategoryMapper.selectByExample(criteria);
+	}
+
+	@Override
+	public boolean addProductById(String itemId, String category_id, String subcategory_id, String item_name,String description, String thumb, int price, int stock_number, String update_by, String remarks) {
+		ProductItem productItem = new ProductItem();
+		ProductItemExample example = new ProductItemExample();
+		example.createCriteria().andItemIdEqualTo(itemId);
+		return false;
+	}
+
+	@Override
+	public boolean updateProductById(String itemId, String category_id, String subcategory_id, String item_name,
+			String description, String thumb, int price, int stock_number, String update_by, String remarks) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean addCartById(String user_id, String item_id, String item_name, String thumb, int account,
+			String update_by, String remarks) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean updateCartById(String user_id, String item_id, String item_name, String thumb, int account,
+			String update_by, String remarks) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean deleteCartById(String user_id, String item_id, String item_name, String thumb, int account,
+			String update_by, String remarks) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public List<ProductDiscount> getDiscountPrdList() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ProductDiscount getDiscountInfoById(String itemId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

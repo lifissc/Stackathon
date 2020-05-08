@@ -9,7 +9,7 @@
     <result column="item_name" property="itemName" jdbcType="VARCHAR" />
     <result column="description" property="description" jdbcType="VARCHAR" />
     <result column="thumb" property="thumb" jdbcType="VARCHAR" />
-    <result column="percentage" property="percentage" jdbcType="INTEGER" />
+    <result column="percentage" property="percentage" jdbcType="VARCHAR" />
     <result column="create_date" property="createDate" jdbcType="TIMESTAMP" />
     <result column="update_by" property="updateBy" jdbcType="VARCHAR" />
     <result column="update_date" property="updateDate" jdbcType="TIMESTAMP" />
@@ -80,7 +80,7 @@
       )
     values (#{itemId,jdbcType=VARCHAR}, #{discountCode,jdbcType=VARCHAR}, #{startDate,jdbcType=VARCHAR}, 
       #{endDate,jdbcType=VARCHAR}, #{itemName,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, 
-      #{thumb,jdbcType=VARCHAR}, #{percentage,jdbcType=INTEGER}, #{createDate,jdbcType=TIMESTAMP}, 
+      #{thumb,jdbcType=VARCHAR}, #{percentage,jdbcType=VARCHAR}, #{createDate,jdbcType=TIMESTAMP}, 
       #{updateBy,jdbcType=VARCHAR}, #{updateDate,jdbcType=TIMESTAMP}, #{remarks,jdbcType=VARCHAR}
       )
   </insert>
@@ -147,7 +147,7 @@
         #{thumb,jdbcType=VARCHAR},
       </if>
       <if test="percentage != null" >
-        #{percentage,jdbcType=INTEGER},
+        #{percentage,jdbcType=VARCHAR},
       </if>
       <if test="createDate != null" >
         #{createDate,jdbcType=TIMESTAMP},
@@ -185,7 +185,7 @@
         thumb = #{thumb,jdbcType=VARCHAR},
       </if>
       <if test="percentage != null" >
-        percentage = #{percentage,jdbcType=INTEGER},
+        percentage = #{percentage,jdbcType=VARCHAR},
       </if>
       <if test="createDate != null" >
         create_date = #{createDate,jdbcType=TIMESTAMP},
@@ -210,7 +210,7 @@
       item_name = #{itemName,jdbcType=VARCHAR},
       description = #{description,jdbcType=VARCHAR},
       thumb = #{thumb,jdbcType=VARCHAR},
-      percentage = #{percentage,jdbcType=INTEGER},
+      percentage = #{percentage,jdbcType=VARCHAR},
       create_date = #{createDate,jdbcType=TIMESTAMP},
       update_by = #{updateBy,jdbcType=VARCHAR},
       update_date = #{updateDate,jdbcType=TIMESTAMP},

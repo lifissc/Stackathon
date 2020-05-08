@@ -17,7 +17,7 @@ public class ProductDiscount {
 
     private String thumb;
 
-    private Integer percentage;
+    private String percentage;
 
     private Date createDate;
 
@@ -83,12 +83,12 @@ public class ProductDiscount {
         this.thumb = thumb == null ? null : thumb.trim();
     }
 
-    public Integer getPercentage() {
+    public String getPercentage() {
         return percentage;
     }
 
-    public void setPercentage(Integer percentage) {
-        this.percentage = percentage;
+    public void setPercentage(String percentage) {
+        this.percentage = percentage == null ? null : percentage.trim();
     }
 
     public Date getCreateDate() {

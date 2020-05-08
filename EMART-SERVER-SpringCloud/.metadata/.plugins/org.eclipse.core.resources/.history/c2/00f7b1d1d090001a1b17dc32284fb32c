@@ -1,0 +1,15 @@
+package com.simplemall.micro.serv.prd.service;
+
+import java.util.List;
+
+import com.simplemall.micro.serv.common.bean.product.Category;
+import com.simplemall.micro.serv.common.bean.product.ProductItem;
+
+public interface IPrdService {
+
+	ProductItem getProductById(String prdId);
+
+	List<ProductItem> queryPrdList();
+
+	List<Category> getCatagoryList();
+}

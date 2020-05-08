@@ -2,14 +2,12 @@ package com.simplemall.micro.serv.common.bean.product;
 
 import java.util.Date;
 
-public class ProductCart {
-    private String userId;
-
-    private String itemId;
-
+public class ProductCart extends ProductCartKey {
     private String itemName;
 
     private String thumb;
+
+    private Integer price;
 
     private Integer account;
 
@@ -20,22 +18,6 @@ public class ProductCart {
     private Date updateDate;
 
     private String remarks;
-
-    public String getUserId() {
-        return userId;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId == null ? null : userId.trim();
-    }
-
-    public String getItemId() {
-        return itemId;
-    }
-
-    public void setItemId(String itemId) {
-        this.itemId = itemId == null ? null : itemId.trim();
-    }
 
     public String getItemName() {
         return itemName;
@@ -51,6 +33,14 @@ public class ProductCart {
 
     public void setThumb(String thumb) {
         this.thumb = thumb == null ? null : thumb.trim();
+    }
+
+    public Integer getPrice() {
+        return price;
+    }
+
+    public void setPrice(Integer price) {
+        this.price = price;
     }
 
     public Integer getAccount() {

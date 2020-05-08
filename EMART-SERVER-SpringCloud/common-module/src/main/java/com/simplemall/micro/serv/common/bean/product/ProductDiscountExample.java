@@ -605,52 +605,62 @@ public class ProductDiscountExample {
             return (Criteria) this;
         }
 
-        public Criteria andPercentageEqualTo(Integer value) {
+        public Criteria andPercentageEqualTo(String value) {
             addCriterion("percentage =", value, "percentage");
             return (Criteria) this;
         }
 
-        public Criteria andPercentageNotEqualTo(Integer value) {
+        public Criteria andPercentageNotEqualTo(String value) {
             addCriterion("percentage <>", value, "percentage");
             return (Criteria) this;
         }
 
-        public Criteria andPercentageGreaterThan(Integer value) {
+        public Criteria andPercentageGreaterThan(String value) {
             addCriterion("percentage >", value, "percentage");
             return (Criteria) this;
         }
 
-        public Criteria andPercentageGreaterThanOrEqualTo(Integer value) {
+        public Criteria andPercentageGreaterThanOrEqualTo(String value) {
             addCriterion("percentage >=", value, "percentage");
             return (Criteria) this;
         }
 
-        public Criteria andPercentageLessThan(Integer value) {
+        public Criteria andPercentageLessThan(String value) {
             addCriterion("percentage <", value, "percentage");
             return (Criteria) this;
         }
 
-        public Criteria andPercentageLessThanOrEqualTo(Integer value) {
+        public Criteria andPercentageLessThanOrEqualTo(String value) {
             addCriterion("percentage <=", value, "percentage");
             return (Criteria) this;
         }
 
-        public Criteria andPercentageIn(List<Integer> values) {
+        public Criteria andPercentageLike(String value) {
+            addCriterion("percentage like", value, "percentage");
+            return (Criteria) this;
+        }
+
+        public Criteria andPercentageNotLike(String value) {
+            addCriterion("percentage not like", value, "percentage");
+            return (Criteria) this;
+        }
+
+        public Criteria andPercentageIn(List<String> values) {
             addCriterion("percentage in", values, "percentage");
             return (Criteria) this;
         }
 
-        public Criteria andPercentageNotIn(List<Integer> values) {
+        public Criteria andPercentageNotIn(List<String> values) {
             addCriterion("percentage not in", values, "percentage");
             return (Criteria) this;
         }
 
-        public Criteria andPercentageBetween(Integer value1, Integer value2) {
+        public Criteria andPercentageBetween(String value1, String value2) {
             addCriterion("percentage between", value1, value2, "percentage");
             return (Criteria) this;
         }
 
-        public Criteria andPercentageNotBetween(Integer value1, Integer value2) {
+        public Criteria andPercentageNotBetween(String value1, String value2) {
             addCriterion("percentage not between", value1, value2, "percentage");
             return (Criteria) this;
         }

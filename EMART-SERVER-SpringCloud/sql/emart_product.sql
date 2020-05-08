@@ -92,7 +92,7 @@ CREATE TABLE `tb_product_discount` (
   `item_name` varchar(20) NOT NULL,
   `description` varchar(100) DEFAULT NULL,
   `thumb` varchar(100) DEFAULT NULL,
-  `percentage` int(11) NOT NULL,
+  `percentage` varchar(6) NOT NULL,
   `create_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `update_by` varchar(32) DEFAULT NULL,
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -109,12 +109,13 @@ CREATE TABLE `tb_product_cart` (
   `item_id` varchar(10) NOT NULL,
   `item_name` varchar(20) NOT NULL,
   `thumb` varchar(100) DEFAULT NULL,
+  `price` int(11) NOT NULL,
   `account` int(11) NOT NULL,
   `create_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `update_by` varchar(32) DEFAULT NULL,
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `remarks` varchar(1000) DEFAULT NULL,
-  PRIMARY KEY (`user_id`)
+  PRIMARY KEY (`user_id`,`item_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 

@@ -1,40 +1,14 @@
 package com.simplemall.micro.serv.order.service;
 
-import com.simplemall.micro.serv.common.bean.order.OrderDTO;
+import java.util.List;
 
-/**
- * 订单服务类
- * 
- * @author guooo
- *
- */
+import com.simplemall.micro.serv.common.bean.order.OrderInfo;
+
 public interface IOrderService {
 
-	/**
-	 * 创建
-	 * 
-	 * @param orderJsonStr
-	 *            订单json串
-	 * @return
-	 */
-	boolean create(String orderJsonStr);
+	boolean createOrder(String order_id, String item_id, String buyer_id, String seller_id, String item_name,String thumb, String transaction_id, int number_items, String account_id, int price, String create_by);
 
-	/**
-	 * 查看
-	 * 
-	 * @param serialNo
-	 * @param accountId
-	 * @return
-	 */
-	OrderDTO view(String serialNo, String accountId);
+	List<OrderInfo> viewPurchaseHistory(String buyerId);
 
-	/**
-	 * 订单状态变更
-	 * 
-	 * @param serialNo
-	 * @param state
-	 * @param orderStatus
-	 * @return
-	 */
-	boolean changeOrderState(String serialNo, String state, String orderStatus);
+	List<OrderInfo> viewSellReport(String sellerId);
 }

@@ -1,14 +1,6 @@
 package com.simplemall.pay.service;
 
-import java.math.BigDecimal;
-
 public interface IPayService {
 
-	/**
-	 * @param serialNo
-	 * @param payType
-	 * @param price
-	 * @return
-	 */
-	int pay(String serialNo,String payType,BigDecimal price);
+	boolean pay(String pay_id, String user_id, String seller_id, String transaction_type, String remark);
 }

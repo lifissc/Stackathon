@@ -1,0 +1,22 @@
+package com.simplemall.pay.service.impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.simplemall.pay.dal.TransactionsMapper;
+import com.simplemall.pay.service.IPayService;
+
+@Service
+public class PayServiceImpl implements IPayService {
+
+	@Autowired
+	TransactionsMapper transactionsMapper;
+	
+
+	@Override
+	public int pay(String pay_id, String user_id, String seller_id, String transaction_type, String remark) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

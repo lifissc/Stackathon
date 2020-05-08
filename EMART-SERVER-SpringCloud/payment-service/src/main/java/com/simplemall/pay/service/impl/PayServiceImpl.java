@@ -1,29 +1,47 @@
 package com.simplemall.pay.service.impl;
 
-import java.math.BigDecimal;
+import java.util.List;
 
+import org.apache.commons.collections.CollectionUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.simplemall.micro.serv.common.constant.SystemConstants;
-import com.simplemall.pay.bean.PayRecord;
-import com.simplemall.pay.dal.PayRecordMapper;
+import com.simplemall.pay.bean.Transactions;
+import com.simplemall.pay.bean.TransactionsExample;
+import com.simplemall.pay.dal.TransactionsMapper;
 import com.simplemall.pay.service.IPayService;
 
 @Service
 public class PayServiceImpl implements IPayService {
+	
+	private Logger logger = LoggerFactory.getLogger(PayServiceImpl.class);
 
 	@Autowired
-	PayRecordMapper recordMapper;
+	TransactionsMapper transactionsMapper;
 	
+
 	@Override
-	public int pay(String serialNo, String payType,BigDecimal price) {
-		PayRecord record = new PayRecord();
-		record.setPrice(Float.valueOf(String.valueOf(price)));
-		record.setSerialNo(serialNo);
-		record.setType(payType);
-		record.setStatus(SystemConstants.PAY_STATUS.PAID);
-		return recordMapper.insertSelective(record);
+	public boolean pay(String pay_id, String user_id, String seller_id, String transaction_type, String remark) {
+		
+		TransactionsExample example = new TransactionsExample();
+		example.createCriteria().andPayIdEqualTo(pay_id);
+		List<Transactions> list = transactionsMapper.selectByExample(example);
+		if (CollectionUtils.isNotEmpty(list)) {
+			logger.warn("{}-This pay record is alreday present!",pay_id);
+			return false;
+		}
+		
+		Transactions transactions = new Transactions();
+		transactions.setPayId(pay_id);
+		transactions.setUserId(user_id);
+		transactions.setSellerId(seller_id);
+		transactions.setTransactionType(transaction_type);
+		transactions.setRemark(remark);
+		int result = transactionsMapper.insertSelective(transactions);
+		logger.info("{} add pay record success！",pay_id);
+		return result > 0 ? true : false;
 	}
 
 }

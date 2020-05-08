@@ -1,0 +1,49 @@
+package com.simplemall.pay.service.impl;
+
+import java.util.List;
+
+import org.apache.commons.collections.CollectionUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.simplemall.micro.serv.common.bean.product.ProductItem;
+import com.simplemall.pay.bean.Transactions;
+import com.simplemall.pay.bean.TransactionsExample;
+import com.simplemall.pay.dal.TransactionsMapper;
+import com.simplemall.pay.service.IPayService;
+
+@Service
+public class PayServiceImpl implements IPayService {
+
+	@Autowired
+	TransactionsMapper transactionsMapper;
+	
+
+	@Override
+	public boolean pay(String pay_id, String user_id, String seller_id, String transaction_type, String remark) {
+		
+		TransactionsExample example = new TransactionsExample();
+		example.createCriteria().andPayIdEqualTo(pay_id);
+		List<Transactions> list = transactionsMapper.selectByExample(example);
+		if (CollectionUtils.isNotEmpty(list)) {
+			logger.warn("{}-This pay record is alreday present!",pay_id);
+			return false;
+		}
+		
+		ProductItem productItem = new ProductItem();
+		productItem.setItemId(itemId);
+		productItem.setCategoryId(category_id);
+		productItem.setSubcategoryId(subcategory_id);
+		productItem.setItemName(item_name);
+		productItem.setDescription(description);
+		productItem.setThumb(thumb);
+		productItem.setPrice(price);
+		productItem.setStockNumber(stock_number);
+		productItem.setUpdateBy(update_by);
+		productItem.setRemarks(remarks);
+		int result = prdInfoMapper.insertSelective(productItem);
+		logger.info("{} add product success！",itemId);
+		return result > 0 ? true : false;
+	}
+
+}

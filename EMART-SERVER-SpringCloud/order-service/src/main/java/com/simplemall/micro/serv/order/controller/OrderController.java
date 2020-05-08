@@ -1,21 +1,18 @@
 package com.simplemall.micro.serv.order.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.simplemall.micro.serv.common.bean.order.OrderDTO;
+import com.simplemall.micro.serv.common.bean.order.OrderInfo;
 import com.simplemall.micro.serv.common.constant.SystemConstants;
 import com.simplemall.micro.serv.order.service.IOrderService;
 
-/**
- * 订单控制类
- * 
- * @author guooo
- *
- */
+@Controller
 @RestController
 @RequestMapping("/order")
 public class OrderController {
@@ -23,39 +20,19 @@ public class OrderController {
 	@Autowired
 	IOrderService orderService;
 
-	/**
-	 * 创建
-	 * 
-	 * @param orderJsonStr
-	 * @return
-	 */
-	@RequestMapping(value = "create", method = {RequestMethod.POST,RequestMethod.GET})
-	public String createOrder(String orderJsonStr) {
-		boolean result = orderService.create(orderJsonStr);
+	@RequestMapping(value = "createOrder", method = {RequestMethod.POST,RequestMethod.GET})
+	public String createOrder(String order_id,String item_id,String buyer_id,String seller_id,String item_name,String thumb,String transaction_id,int number_items,String account_id,int price,String create_by) {
+		boolean result = orderService.createOrder( order_id, item_id, buyer_id, seller_id, item_name, thumb, transaction_id, number_items, account_id, price, create_by);
 		return result ? SystemConstants.Code.SUCCESS : SystemConstants.Code.FAIL;
 	}
 
-	/**
-	 * 查看订单，确保查看人与订单所有人为同一人
-	 * 
-	 * @param serialNo
-	 * @param accountId
-	 */
-	@RequestMapping(value = "view", method = RequestMethod.POST)
-	public OrderDTO viewOrder(@RequestParam(required = true) String serialNo,
-			@RequestParam(required = true) String accountId,String jwtToken) {
-		return orderService.view(serialNo, accountId);
+	@RequestMapping(value = "viewPurchaseHistory", method = RequestMethod.POST)
+	public List<OrderInfo> viewPurchaseHistory(String buyerId) {
+		return orderService.viewPurchaseHistory(buyerId);
 	}
 
-	/**
-	 * 状态变更，主要供后台人员使用便于前端消费者跟踪订单状况
-	 * 
-	 * @param serialNo
-	 * @param state
-	 * @return
-	 */
-	@RequestMapping(value = "state/change", method = RequestMethod.POST)
-	public Boolean changeOrderState(String serialNo, String payStatus,String orderStatus) {
-		return orderService.changeOrderState(serialNo, payStatus,orderStatus);
+	@RequestMapping(value = "viewSellReport", method = RequestMethod.POST)
+	public List<OrderInfo> viewSellReport(String sellerId) {
+		return orderService.viewSellReport(sellerId);
 	}
 }

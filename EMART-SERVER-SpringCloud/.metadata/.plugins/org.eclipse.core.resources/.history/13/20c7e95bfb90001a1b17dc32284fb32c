@@ -1,0 +1,63 @@
+package com.simplemall.micro.serv.order.service.impl;
+
+import java.util.List;
+
+import org.apache.commons.collections.CollectionUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.simplemall.micro.serv.common.bean.order.OrderInfo;
+import com.simplemall.micro.serv.common.bean.order.OrderInfoExample;
+import com.simplemall.micro.serv.order.mapper.OrderInfoMapper;
+import com.simplemall.micro.serv.order.service.IOrderService;
+
+@Service
+public class OrderServiceImpl implements IOrderService {
+
+	private Logger logger = LoggerFactory.getLogger(OrderServiceImpl.class);
+
+	@Autowired
+	OrderInfoMapper orderInfoMapper;
+
+	@Override
+	public boolean createOrder(String order_id, String item_id, String buyer_id, String seller_id, String item_name,
+			String thumb, String transaction_id, int number_items, String account_id, int price, String create_by) {
+		OrderInfoExample example = new OrderInfoExample();
+		example.createCriteria().andOrderIdEqualTo(order_id);
+		List<OrderInfo> list = orderInfoMapper.selectByExample(example);
+		if (CollectionUtils.isNotEmpty(list)) {
+			logger.warn("{}-This product is alreday present!",order_id);
+			return false;
+		}
+		
+		OrderInfo orderInfo = new OrderInfo();
+		orderInfo.setItemId(itemId);
+		orderInfo.setCategoryId(category_id);
+		orderInfo.setSubcategoryId(subcategory_id);
+		orderInfo.setItemName(item_name);
+		orderInfo.setDescription(description);
+		orderInfo.setThumb(thumb);
+		orderInfo.setPrice(price);
+		orderInfo.setStockNumber(stock_number);
+		orderInfo.setUpdateBy(update_by);
+		orderInfo.setRemarks(remarks);
+		int result = orderInfoMapper.insertSelective(orderInfo);
+		logger.info("{} add order success！",order_id);
+		return result > 0 ? true : false;
+	}
+
+	@Override
+	public OrderInfo viewPurchaseHistory(String buyerId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public OrderInfo viewSellReport(String sellerId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

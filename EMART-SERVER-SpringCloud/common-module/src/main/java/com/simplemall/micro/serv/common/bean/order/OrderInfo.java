@@ -1,481 +1,135 @@
 package com.simplemall.micro.serv.common.bean.order;
 
-import java.math.BigDecimal;
 import java.util.Date;
 
 public class OrderInfo {
-    /**
-     * 
-     * 表 : tb_ord_inf
-     * 对应字段 : tid
-     */
-    private String tid;
+    private String orderId;
 
-    /**
-     * 流水号
-     * 表 : tb_ord_inf
-     * 对应字段 : serial_no
-     */
-    private String serialNo;
+    private String itemId;
 
-    /**
-     * 订单状态
-     * 表 : tb_ord_inf
-     * 对应字段 : status
-     */
-    private String status;
+    private String buyerId;
 
-    /**
-     * 支付类型
-     * 表 : tb_ord_inf
-     * 对应字段 : pay_type
-     */
-    private String payType;
+    private String sellerId;
 
-    /**
-     * 支付状态
-     * 表 : tb_ord_inf
-     * 对应字段 : pay_status
-     */
-    private String payStatus;
+    private String itemName;
 
-    /**
-     * 账户
-     * 表 : tb_ord_inf
-     * 对应字段 : shipping_account
-     */
-    private String shippingAccount;
+    private String thumb;
 
-    /**
-     * 收货人
-     * 表 : tb_ord_inf
-     * 对应字段 : shipping_name
-     */
-    private String shippingName;
+    private String transactionId;
 
-    /**
-     * 收货地址
-     * 表 : tb_ord_inf
-     * 对应字段 : shipping_address
-     */
-    private String shippingAddress;
+    private Integer numberItems;
 
-    /**
-     * 收货电话
-     * 表 : tb_ord_inf
-     * 对应字段 : shipping_phone
-     */
-    private String shippingPhone;
+    private String accountId;
 
-    /**
-     * 发货方式
-     * 表 : tb_ord_inf
-     * 对应字段 : post_way
-     */
-    private String postWay;
+    private Integer price;
 
-    /**
-     * 配送费
-     * 表 : tb_ord_inf
-     * 对应字段 : post_fee
-     */
-    private BigDecimal postFee;
-
-    /**
-     * 订单总价
-     * 表 : tb_ord_inf
-     * 对应字段 : price
-     */
-    private BigDecimal price;
-
-    /**
-     * 
-     * 表 : tb_ord_inf
-     * 对应字段 : create_by
-     */
     private String createBy;
 
-    /**
-     * 
-     * 表 : tb_ord_inf
-     * 对应字段 : create_date
-     */
     private Date createDate;
 
-    /**
-     * 
-     * 表 : tb_ord_inf
-     * 对应字段 : update_by
-     */
-    private String updateBy;
-
-    /**
-     * 
-     * 表 : tb_ord_inf
-     * 对应字段 : update_date
-     */
-    private Date updateDate;
-
-    /**
-     * 
-     * 表 : tb_ord_inf
-     * 对应字段 : remark
-     */
     private String remark;
 
-    /**
-     * 
-     * 表 : tb_ord_inf
-     * 对应字段 : version
-     */
-    private Integer version;
-
-    /**
-     * 
-     * 表 : tb_ord_inf
-     * 对应字段 : state
-     */
-    private Integer state;
-
-    /**
-     * get method 
-     *
-     * @return tb_ord_inf.tid：
-     */
-    public String getTid() {
-        return tid;
+    public String getOrderId() {
+        return orderId;
     }
 
-    /**
-     * set method 
-     *
-     * @param tid  
-     */
-    public void setTid(String tid) {
-        this.tid = tid == null ? null : tid.trim();
+    public void setOrderId(String orderId) {
+        this.orderId = orderId == null ? null : orderId.trim();
     }
 
-    /**
-     * get method 
-     *
-     * @return tb_ord_inf.serial_no：流水号
-     */
-    public String getSerialNo() {
-        return serialNo;
+    public String getItemId() {
+        return itemId;
     }
 
-    /**
-     * set method 
-     *
-     * @param serialNo  流水号
-     */
-    public void setSerialNo(String serialNo) {
-        this.serialNo = serialNo == null ? null : serialNo.trim();
+    public void setItemId(String itemId) {
+        this.itemId = itemId == null ? null : itemId.trim();
     }
 
-    /**
-     * get method 
-     *
-     * @return tb_ord_inf.status：订单状态
-     */
-    public String getStatus() {
-        return status;
+    public String getBuyerId() {
+        return buyerId;
     }
 
-    /**
-     * set method 
-     *
-     * @param status  订单状态
-     */
-    public void setStatus(String status) {
-        this.status = status == null ? null : status.trim();
+    public void setBuyerId(String buyerId) {
+        this.buyerId = buyerId == null ? null : buyerId.trim();
     }
 
-    /**
-     * get method 
-     *
-     * @return tb_ord_inf.pay_type：支付类型
-     */
-    public String getPayType() {
-        return payType;
+    public String getSellerId() {
+        return sellerId;
     }
 
-    /**
-     * set method 
-     *
-     * @param payType  支付类型
-     */
-    public void setPayType(String payType) {
-        this.payType = payType == null ? null : payType.trim();
+    public void setSellerId(String sellerId) {
+        this.sellerId = sellerId == null ? null : sellerId.trim();
     }
 
-    /**
-     * get method 
-     *
-     * @return tb_ord_inf.pay_status：支付状态
-     */
-    public String getPayStatus() {
-        return payStatus;
+    public String getItemName() {
+        return itemName;
     }
 
-    /**
-     * set method 
-     *
-     * @param payStatus  支付状态
-     */
-    public void setPayStatus(String payStatus) {
-        this.payStatus = payStatus == null ? null : payStatus.trim();
+    public void setItemName(String itemName) {
+        this.itemName = itemName == null ? null : itemName.trim();
     }
 
-    /**
-     * get method 
-     *
-     * @return tb_ord_inf.shipping_account：账户
-     */
-    public String getShippingAccount() {
-        return shippingAccount;
+    public String getThumb() {
+        return thumb;
     }
 
-    /**
-     * set method 
-     *
-     * @param shippingAccount  账户
-     */
-    public void setShippingAccount(String shippingAccount) {
-        this.shippingAccount = shippingAccount == null ? null : shippingAccount.trim();
+    public void setThumb(String thumb) {
+        this.thumb = thumb == null ? null : thumb.trim();
     }
 
-    /**
-     * get method 
-     *
-     * @return tb_ord_inf.shipping_name：收货人
-     */
-    public String getShippingName() {
-        return shippingName;
+    public String getTransactionId() {
+        return transactionId;
     }
 
-    /**
-     * set method 
-     *
-     * @param shippingName  收货人
-     */
-    public void setShippingName(String shippingName) {
-        this.shippingName = shippingName == null ? null : shippingName.trim();
+    public void setTransactionId(String transactionId) {
+        this.transactionId = transactionId == null ? null : transactionId.trim();
     }
 
-    /**
-     * get method 
-     *
-     * @return tb_ord_inf.shipping_address：收货地址
-     */
-    public String getShippingAddress() {
-        return shippingAddress;
+    public Integer getNumberItems() {
+        return numberItems;
     }
 
-    /**
-     * set method 
-     *
-     * @param shippingAddress  收货地址
-     */
-    public void setShippingAddress(String shippingAddress) {
-        this.shippingAddress = shippingAddress == null ? null : shippingAddress.trim();
+    public void setNumberItems(Integer numberItems) {
+        this.numberItems = numberItems;
     }
 
-    /**
-     * get method 
-     *
-     * @return tb_ord_inf.shipping_phone：收货电话
-     */
-    public String getShippingPhone() {
-        return shippingPhone;
+    public String getAccountId() {
+        return accountId;
     }
 
-    /**
-     * set method 
-     *
-     * @param shippingPhone  收货电话
-     */
-    public void setShippingPhone(String shippingPhone) {
-        this.shippingPhone = shippingPhone == null ? null : shippingPhone.trim();
+    public void setAccountId(String accountId) {
+        this.accountId = accountId == null ? null : accountId.trim();
     }
 
-    /**
-     * get method 
-     *
-     * @return tb_ord_inf.post_way：发货方式
-     */
-    public String getPostWay() {
-        return postWay;
-    }
-
-    /**
-     * set method 
-     *
-     * @param postWay  发货方式
-     */
-    public void setPostWay(String postWay) {
-        this.postWay = postWay == null ? null : postWay.trim();
-    }
-
-    /**
-     * get method 
-     *
-     * @return tb_ord_inf.post_fee：配送费
-     */
-    public BigDecimal getPostFee() {
-        return postFee;
-    }
-
-    /**
-     * set method 
-     *
-     * @param postFee  配送费
-     */
-    public void setPostFee(BigDecimal postFee) {
-        this.postFee = postFee;
-    }
-
-    /**
-     * get method 
-     *
-     * @return tb_ord_inf.price：订单总价
-     */
-    public BigDecimal getPrice() {
+    public Integer getPrice() {
         return price;
     }
 
-    /**
-     * set method 
-     *
-     * @param price  订单总价
-     */
-    public void setPrice(BigDecimal price) {
+    public void setPrice(Integer price) {
         this.price = price;
     }
 
-    /**
-     * get method 
-     *
-     * @return tb_ord_inf.create_by：
-     */
     public String getCreateBy() {
         return createBy;
     }
 
-    /**
-     * set method 
-     *
-     * @param createBy  
-     */
     public void setCreateBy(String createBy) {
         this.createBy = createBy == null ? null : createBy.trim();
     }
 
-    /**
-     * get method 
-     *
-     * @return tb_ord_inf.create_date：
-     */
     public Date getCreateDate() {
         return createDate;
     }
 
-    /**
-     * set method 
-     *
-     * @param createDate  
-     */
     public void setCreateDate(Date createDate) {
         this.createDate = createDate;
     }
 
-    /**
-     * get method 
-     *
-     * @return tb_ord_inf.update_by：
-     */
-    public String getUpdateBy() {
-        return updateBy;
-    }
-
-    /**
-     * set method 
-     *
-     * @param updateBy  
-     */
-    public void setUpdateBy(String updateBy) {
-        this.updateBy = updateBy == null ? null : updateBy.trim();
-    }
-
-    /**
-     * get method 
-     *
-     * @return tb_ord_inf.update_date：
-     */
-    public Date getUpdateDate() {
-        return updateDate;
-    }
-
-    /**
-     * set method 
-     *
-     * @param updateDate  
-     */
-    public void setUpdateDate(Date updateDate) {
-        this.updateDate = updateDate;
-    }
-
-    /**
-     * get method 
-     *
-     * @return tb_ord_inf.remark：
-     */
     public String getRemark() {
         return remark;
     }
 
-    /**
-     * set method 
-     *
-     * @param remark  
-     */
     public void setRemark(String remark) {
         this.remark = remark == null ? null : remark.trim();
-    }
-
-    /**
-     * get method 
-     *
-     * @return tb_ord_inf.version：
-     */
-    public Integer getVersion() {
-        return version;
-    }
-
-    /**
-     * set method 
-     *
-     * @param version  
-     */
-    public void setVersion(Integer version) {
-        this.version = version;
-    }
-
-    /**
-     * get method 
-     *
-     * @return tb_ord_inf.state：
-     */
-    public Integer getState() {
-        return state;
-    }
-
-    /**
-     * set method 
-     *
-     * @param state  
-     */
-    public void setState(Integer state) {
-        this.state = state;
     }
 }

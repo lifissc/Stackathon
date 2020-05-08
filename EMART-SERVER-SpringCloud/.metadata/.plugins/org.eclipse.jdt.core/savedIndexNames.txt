@@ -247,7 +247,6 @@ INDEX VERSION 1.127+C:\diskD\Fullstack\Stackathon\EMART-SERVER-SpringCloud\.meta
 2095496091.index
 3435998601.index
 2361128431.index
-715374721.index
 1598301924.index
 3361940818.index
 2408966131.index

@@ -1,2 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.simplemall.micro.serv.common.bean.product.Category"/>
+<fullyQualifiedTypeName name="com.simplemall.micro.serv.common.bean.product.ProductItemExample"/>
+<fullyQualifiedTypeName name="com.simplemall.micro.serv.common.bean.product.ProductCartKey"/>
+<fullyQualifiedTypeName name="com.simplemall.micro.serv.common.bean.order.OrderInfo"/>
+<fullyQualifiedTypeName name="org.springframework.transaction.annotation.Transactional"/>
+</qualifiedTypeNameHistroy>

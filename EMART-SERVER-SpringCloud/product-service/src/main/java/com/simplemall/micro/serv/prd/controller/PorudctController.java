@@ -7,11 +7,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.simplemall.micro.serv.common.bean.product.Category;
 import com.simplemall.micro.serv.common.bean.product.ProductDiscount;
 import com.simplemall.micro.serv.common.bean.product.ProductItem;
 import com.simplemall.micro.serv.common.bean.product.Subcategory;
 import com.simplemall.micro.serv.common.constant.SystemConstants;
+import com.simplemall.micro.serv.prd.model.TbCategory;
 import com.simplemall.micro.serv.prd.service.IPrdService;
 
 @RestController
@@ -32,7 +32,7 @@ public class PorudctController {
 	}
 	
 	@RequestMapping(value = "catagory", method = RequestMethod.POST)
-	public List<Category> getCatagoryList() {
+	public List<TbCategory> getCatagoryList() {
 		return prdService.getCatagoryList();
 	}
 	

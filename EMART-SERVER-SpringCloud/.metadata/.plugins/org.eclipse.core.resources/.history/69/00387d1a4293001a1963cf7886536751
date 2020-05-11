@@ -1,0 +1,11 @@
+package com.simplemall.pay.dao;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Component;
+
+import com.simplemall.pay.model.TbTransaction;
+
+@Component
+public interface TbTransactionDAO extends JpaRepository<TbTransaction,Integer>{
+
+}

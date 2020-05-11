@@ -1,12 +1,11 @@
 package com.simplemall.micro.serv.prd.service;
 
-import java.math.BigDecimal;
 import java.util.List;
 
-import com.simplemall.micro.serv.common.bean.product.Category;
 import com.simplemall.micro.serv.common.bean.product.ProductDiscount;
 import com.simplemall.micro.serv.common.bean.product.ProductItem;
 import com.simplemall.micro.serv.common.bean.product.Subcategory;
+import com.simplemall.micro.serv.prd.model.TbCategory;
 
 public interface IPrdService {
 
@@ -14,7 +13,7 @@ public interface IPrdService {
 
 	List<ProductItem> queryPrdList();
 
-	List<Category> getCatagoryList();
+	List<TbCategory> getCatagoryList();
 
 	List<Subcategory> getSubCatagoryList(String categoryId);
 

@@ -1,6 +1,5 @@
 package com.simplemall.micro.serv.prd.service.impl;
 
-import java.math.BigDecimal;
 import java.util.List;
 
 import org.apache.commons.collections.CollectionUtils;
@@ -8,8 +7,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import com.simplemall.micro.serv.common.bean.product.Category;
 import com.simplemall.micro.serv.common.bean.product.CategoryExample;
 import com.simplemall.micro.serv.common.bean.product.ProductCart;
 import com.simplemall.micro.serv.common.bean.product.ProductCartExample;
@@ -20,11 +19,13 @@ import com.simplemall.micro.serv.common.bean.product.ProductItem;
 import com.simplemall.micro.serv.common.bean.product.ProductItemExample;
 import com.simplemall.micro.serv.common.bean.product.Subcategory;
 import com.simplemall.micro.serv.common.bean.product.SubcategoryExample;
+import com.simplemall.micro.serv.prd.dao.TbCategoryDAO;
 import com.simplemall.micro.serv.prd.mapper.CategoryMapper;
 import com.simplemall.micro.serv.prd.mapper.ProductCartMapper;
 import com.simplemall.micro.serv.prd.mapper.ProductDiscountMapper;
 import com.simplemall.micro.serv.prd.mapper.ProductItemMapper;
 import com.simplemall.micro.serv.prd.mapper.SubcategoryMapper;
+import com.simplemall.micro.serv.prd.model.TbCategory;
 import com.simplemall.micro.serv.prd.service.IPrdService;
 
 @Service
@@ -34,14 +35,18 @@ public class PrdServiceImpl implements IPrdService {
 
 	@Autowired
 	ProductItemMapper prdInfoMapper;
-	@Autowired
-	CategoryMapper categoryMapper;
+	//@Autowired
+	//CategoryMapper categoryMapper;
 	@Autowired
 	SubcategoryMapper subcategoryMapper;
 	@Autowired
 	ProductCartMapper productCartMapper;
 	@Autowired
 	ProductDiscountMapper productDiscountMapper;
+	
+	@Autowired
+    private TbCategoryDAO tbCategoryDAO;
+	
 
 	@Override
 	public ProductItem getProductById(String itemId) {
@@ -56,8 +61,10 @@ public class PrdServiceImpl implements IPrdService {
 	}
 
 	@Override
-	public List<Category> getCatagoryList() {
-		return categoryMapper.selectByExample(new CategoryExample());
+	@Transactional(value = "transactionManager")
+	public List<TbCategory> getCatagoryList() {
+		//return categoryMapper.selectByExample(new CategoryExample());
+		return tbCategoryDAO.findAll();
 	}
 
 	@Override

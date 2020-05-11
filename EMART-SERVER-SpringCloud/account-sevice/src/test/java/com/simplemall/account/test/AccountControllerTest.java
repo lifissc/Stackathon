@@ -12,16 +12,12 @@ import org.springframework.test.context.web.WebAppConfiguration;
 
 import com.simplemall.account.AccountServApplication;
 import com.simplemall.account.dal.AccountMapper;
-import com.simplemall.account.service.IAccountService;
 import com.simplemall.micro.serv.common.bean.account.Account;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
 @SpringBootTest(classes = AccountServApplication.class)
 public class AccountControllerTest {
-
-	@Autowired
-	private IAccountService accountService;
 
 	@Autowired
 	AccountMapper accountMapper;
@@ -32,7 +28,7 @@ public class AccountControllerTest {
 	@Test
 	@Rollback
 	public void test() {
-		String userid = "100003";
+		String userid = "100010";
 		String password = "123456";
 		Account account = new Account();
 		account.setUserId(userid);

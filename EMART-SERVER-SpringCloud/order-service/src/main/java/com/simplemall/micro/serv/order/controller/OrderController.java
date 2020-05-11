@@ -3,7 +3,6 @@ package com.simplemall.micro.serv.order.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,7 +11,6 @@ import com.simplemall.micro.serv.common.bean.order.OrderInfo;
 import com.simplemall.micro.serv.common.constant.SystemConstants;
 import com.simplemall.micro.serv.order.service.IOrderService;
 
-@Controller
 @RestController
 @RequestMapping("/order")
 public class OrderController {

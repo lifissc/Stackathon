@@ -2,12 +2,13 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="categoryMapper" key="selection"/>
+		<item value="jpa" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="jpa"/>
 			<item value="categoryMapper"/>
 			<item value="freemarker"/>
 			<item value="spring-boot-starter-freemarker"/>
@@ -15,7 +16,6 @@
 			<item value="selectByExample"/>
 			<item value="CategoryExample"/>
 			<item value="queryPrdList"/>
-			<item value="getCatagoryList"/>
 		</list>
 		<list key="replacehistory">
 			<item value=""/>

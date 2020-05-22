@@ -5,4 +5,9 @@
 <fullyQualifiedTypeName name="com.simplemall.micro.serv.common.bean.product.ProductCartKey"/>
 <fullyQualifiedTypeName name="com.simplemall.micro.serv.common.bean.order.OrderInfo"/>
 <fullyQualifiedTypeName name="org.springframework.transaction.annotation.Transactional"/>
+<fullyQualifiedTypeName name="org.springframework.context.annotation.Configuration"/>
+<fullyQualifiedTypeName name="javax.sql.DataSource"/>
+<fullyQualifiedTypeName name="com.simplemall.pay.dao.TbTransactionDAO"/>
+<fullyQualifiedTypeName name="org.springframework.data.jpa.repository.JpaRepository"/>
+<fullyQualifiedTypeName name="org.springframework.data.repository.Repository"/>
 </qualifiedTypeNameHistroy>

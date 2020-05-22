@@ -1,0 +1,139 @@
+package com.simplemall.micro.serv.zuul.filter;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
+
+import com.netflix.zuul.ZuulFilter;
+import com.netflix.zuul.context.RequestContext;
+
+/**
+ * token filter
+ * 
+ * @author LiFeng
+ *
+ */
+@Component
+public class AccessTokenFilter extends ZuulFilter {
+	
+	private static Logger log = LoggerFactory.getLogger(AccessTokenFilter.class);
+	
+    @Value("${sc.jwt.secret}")
+    private String secret;
+
+    @Value("${sc.jwt.pubKeyPath}")
+    private String pubKeyPath;
+
+    @Value("${sc.jwt.priKeyPath}")
+    private String priKeyPath;
+
+    @Value("${sc.jwt.expire}")
+    private Integer expire;
+
+    private PublicKey publicKey;
+
+    private PrivateKey privateKey;
+
+	/*
+	 * 
+	 * @see com.netflix.zuul.IZuulFilter#run()
+	 */
+	@Override
+	public Object run() {		
+        return null;
+	}
+
+	/*
+	 * 
+	 * @see com.netflix.zuul.IZuulFilter#shouldFilter()
+	 */
+	@Override
+	public boolean shouldFilter() {
+
+        RequestContext currentContext = RequestContext.getCurrentContext();
+        HttpServletRequest request = currentContext.getRequest();
+        String url= request.getRequestURI();
+
+        if(url.indexOf("register") != -1){
+            String token = setRegisterToken();
+            currentContext.setSendZuulResponse(false);
+            currentContext.setResponseBody(token);
+            currentContext.setResponseStatusCode(HttpStatus.CREATED.value());
+        }
+
+        String token = request.getParameter("access-token");
+
+        if(token == null || "".equals(token.trim())){
+            currentContext.setSendZuulResponse(false);
+            currentContext.setResponseStatusCode(HttpStatus.UNAUTHORIZED.value());
+
+            return true;
+        }else{
+            getKey();
+            System.out.println("privateKey: "+privateKey);
+            String claims = null;
+            try {
+                claims = JwtUtils.getInfoFromToken(token, publicKey);
+            } catch (Exception e) {
+                e.printStackTrace();
+                System.out.println("token is incorrect");
+            }
+            System.out.println("claims："+claims);
+
+            if(claims != null){
+                return false;
+            }else{
+
+                currentContext.setSendZuulResponse(false);
+                currentContext.setResponseStatusCode(HttpStatus.UNAUTHORIZED.value());
+                return true;
+            }
+        }
+	}
+
+	@Override
+	public int filterOrder() {
+		return 1;
+	}
+
+	@Override
+	public String filterType() {
+		return "pre";
+	}
+	
+	public String setRegisterToken() {
+        try {
+            RsaUtils.generateKey(pubKeyPath,priKeyPath,secret);
+
+            getKey();
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("generate key error");
+        }
+
+        String token = null;
+        try {
+            token = JwtUtils.generateToken(1,"test",privateKey,30);
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("generate token error");
+        }
+        System.out.println("generated token："+token);
+
+        return token;
+    }
+
+    public void getKey(){
+        try {
+            publicKey = RsaUtils.getPublicKey(pubKeyPath);
+            System.out.println("publicKey: "+publicKey);
+            privateKey = RsaUtils.getPrivateKey(priKeyPath);
+            System.out.println("privateKey: "+privateKey);
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("get publicKey error");
+        }
+    }
+}

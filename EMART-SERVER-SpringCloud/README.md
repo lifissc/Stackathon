@@ -15,7 +15,11 @@ eureka-server:
    port: 9003  
    des:  service signup center  
    
-  
+zuul-server:  
+   port: 9005  
+   des:  api gateway  
+   
+   
 account-service:  
    port: 8080  
    des:  user service  

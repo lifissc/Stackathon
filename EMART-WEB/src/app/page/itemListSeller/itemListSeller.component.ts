@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
-import { BsModalService, BsModalRef } from 'src/app/page/itemDetail/node_modules/src/app/page/itemListBuyer/node_modules/ngx-bootstrap/modal';
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { ITEMADDComponent } from '../itemAdd/itemAdd.component';
 import { ITEMUPDATEComponent } from '../itemUpdate/itemUpdate.component';
 import { ComponentService } from '../../component.service';

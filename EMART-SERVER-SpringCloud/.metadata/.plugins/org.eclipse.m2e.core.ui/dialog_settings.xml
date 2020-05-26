@@ -14,6 +14,7 @@
 	</section>
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="C:\diskD\Fullstack\Stackathon\EMART-SERVER-SpringCloud\base-service\zuul-server"/>
 			<item value="C:\diskD\Fullstack\Stackathon\EMART-SERVER-SpringCloud"/>
 		</list>
 		<list key="projectNameTemplate">

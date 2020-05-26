@@ -13,24 +13,11 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<modules>
-		<module>base-serv</module>
+		<module>base-service</module>
 		<module>account-sevice</module>
 		<module>product-service</module>
 		<module>order-service</module>
 		<module>payment-service</module>
-		<module>msg-service</module>
-		<module>front-app</module>
 		<module>common-module</module>
 	</modules>
-	
-	<!--<dependency>
-			<groupId>org.mybatis.spring.boot</groupId>
-			<artifactId>mybatis-spring-boot-starter</artifactId>
-			<version>${mybatis.spring.boot.version}<ersion>
-		</dependency>
-	<dependency>
-			<groupId>com.alibaba</groupId>
-			<artifactId>druid-spring-boot-starter</artifactId>
-			<version>${alibaba.druid.version}<ersion>
-		</dependency> -->update pom next time
 </project>

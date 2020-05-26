@@ -25,7 +25,6 @@
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/payment-service" type="4"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/product-service" type="4"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/zuul-server" type="4"/>
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/zuul-server" type="4"/>
 </workingSet>
 <workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1588827876735_14" label="Multiple Working Sets" name="Aggregate:OSGi Bundle Projects:OSGi Fragment Bundle Projects:OSGi Application Projects:OSGi Composite Bundle Projects:Liberty Feature Projects:EARWorkingSetPage.name:AppClientWorkingSetPage.name:EjbWorkingSetPage.name:ConnectorWorkingSetPage.name:NewWebWorkingSetPage.name:JPAWorkingSet.name:WS_UTIL:WebFragmentWorkingSetPage.name:OthersWorkingSet.name:">
 <workingSet IMemento.internal.id="OSGi Bundle Projects"/>

@@ -1,8 +1,0 @@
-package com.simplemall.micro.serv.prd.dao;
-
-import com.space.jpa.bean.User;
-import org.springframework.data.jpa.repository.JpaRepository;
-
-public interface TbCategoryDAO extends JpaRepository<User,Long>{
-
-}

@@ -1,5 +1,0 @@
-package com.simplemall.micro.serv.prd.config;
-
-public class EntityManagerFactoriesConfiguration {
-
-}

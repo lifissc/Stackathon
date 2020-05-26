@@ -1,5 +1,0 @@
-package com.simplemall.micro.serv.prd.dao;
-
-public interface TbCategoryDAO {
-
-}

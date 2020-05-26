@@ -1,6 +1,0 @@
-package com.simplemall.pay.service;
-
-public interface IPayService {
-
-	int pay(String pay_id, String user_id, String seller_id, String transaction_type, String remark);
-}

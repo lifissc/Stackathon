@@ -3,6 +3,7 @@
 <aop-project name="admin-server"/>
 <aop-project name="product-service"/>
 <aop-project name="order-service"/>
+<aop-project name="zuul-server"/>
 <aop-project name="account-sevice"/>
 <aop-project name="conf-server"/>
 <aop-project name="payment-service"/>

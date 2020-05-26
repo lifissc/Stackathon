@@ -1,5 +1,0 @@
-package com.simplemall.pay.dao;
-
-public interface TbTransactionDAO {
-
-}

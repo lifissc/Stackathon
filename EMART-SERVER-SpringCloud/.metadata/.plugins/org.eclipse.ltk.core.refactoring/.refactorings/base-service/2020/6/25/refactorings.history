@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;docker&apos; to &apos;main&apos;&#x0D;&#x0A;- Original project: &apos;base-service&apos;&#x0D;&#x0A;- Destination element: &apos;main&apos;&#x0D;&#x0A;- Original element: &apos;docker&apos;" description="Copy folder" element1="admin-server/src/main/docker" files="0" flags="589830" folders="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1592202239390" target="/account-sevice/src/main" units="0" version="1.0"/>
+</session>

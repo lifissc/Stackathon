@@ -1,0 +1,5 @@
+com\simplemall\micro\serv\zuul\ZuulServerApplication.class
+com\simplemall\micro\serv\zuul\filter\RoutingFitler.class
+com\simplemall\micro\serv\zuul\filter\AccessTokenFilter.class
+com\simplemall\micro\serv\zuul\filter\PostFilter.class
+com\simplemall\micro\serv\zuul\filter\ErrorFilter.class

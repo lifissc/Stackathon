@@ -146,6 +146,23 @@
 					</dependency>
 				</dependencies>
 			</plugin>
+			<plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>0.4.14</version>
+                <configuration>
+                    <imageName>accoount-service</imageName>
+                    <dockerDirectory>src/main/docker</dockerDirectory>
+                    <dockerHost>http://9.115.24.129:2375</dockerHost>
+                    <resources>
+                        <resource>
+                          <targetPath>/</targetPath>
+                          <directory>${project.build.directory}</directory>
+                          <include>${project.build.finalName}.jar</include>
+                        </resource>
+                   </resources>
+                </configuration>
+            </plugin>
 		</plugins>
 	</build>
 </project>

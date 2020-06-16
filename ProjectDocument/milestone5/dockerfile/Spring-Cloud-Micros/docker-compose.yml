@@ -1,0 +1,101 @@
+version: '2'
+services:
+  eureka-server1:
+    restart: on-failure
+    image: eureka-service
+    ports:
+      - "9003:9003"
+    networks:
+      - eureka-net
+    environment: 
+      SERVER_PORT: "9003"
+
+  config: 
+    image: config-service       
+    networks:
+      - eureka-net             
+    ports:
+      - "9004:9004"            
+    environment:               
+      REGISTER_URL: "http://9.115.24.129:9003/eureka/" 
+      SERVER_PORT: "9004"
+      SERVER_ADDR: "http://9.115.24.129"
+ 
+  zuul:
+    restart: on-failure
+    image: zuul-service
+    ports:
+      - "9005:9005"
+    environment:
+      REGISTER_URL: "http://9.115.24.129:9003/eureka/"
+      SERVER_PORT: "9005"
+      SERVER_ADDR: "http://9.115.24.129"
+    networks:
+      - eureka-net
+      
+  admin:
+    restart: on-failure
+    image: admin-service
+    ports:
+      - "9002:9002"
+    environment:
+      REGISTER_URL: "http://9.115.24.129:9003/eureka/"
+      SERVER_PORT: "9002"
+      SERVER_ADDR: "http://9.115.24.129"
+    networks:
+      - eureka-net
+
+  account-service:
+    restart: on-failure
+    image: accoount-service
+    ports:
+      - "8080:8080"
+    environment:
+      REGISTER_URL: "http://9.115.24.129:9003/eureka/"
+      SERVER_PORT: "8080"
+      SERVER_ADDR: "http://9.115.24.129"
+    networks:
+      - eureka-net
+      
+  product-service:
+    restart: on-failure
+    image: product-service
+    ports:
+      - "8081:8081"
+    environment:
+      REGISTER_URL: "http://9.115.24.129:9003/eureka/"
+      SERVER_PORT: "8081"
+      SERVER_ADDR: "http://9.115.24.129"
+    networks:
+      - eureka-net
+      
+  order-service:
+    restart: on-failure
+    image: order-service
+    ports:
+      - "8083:8083"
+    environment:
+      REGISTER_URL: "http://9.115.24.129:9003/eureka/"
+      SERVER_PORT: "8083"
+      SERVER_ADDR: "http://9.115.24.129"
+    networks:
+      - eureka-net
+      
+      
+  payment-service:
+    restart: on-failure
+    image: payment-service
+    ports:
+      - "8082:8082"
+    environment:
+      REGISTER_URL: "http://9.115.24.129:9003/eureka/"
+      SERVER_PORT: "8082"
+      SERVER_ADDR: "http://9.115.24.129"
+    networks:
+      - eureka-net      
+            
+      
+networks:
+  eureka-net:
+
+    driver: bridge

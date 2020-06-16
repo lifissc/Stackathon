@@ -1,0 +1,14 @@
+
+#Because I use maven plugin to generate image, there is a dockerfile every service.
+#build plugin configation in pom.xml
+
+reference：
+
+/base-service/admin-server/src/main/docker/Dockerfile
+/base-service/conf-server/src/main/docker/Dockerfile
+/base-service/eureka-server/src/main/docker/Dockerfile
+/base-service/zuul-server/src/main/docker/Dockerfile
+/account-sevice/src/main/docker/Dockerfile
+/order-service/src/main/docker/Dockerfile
+/payment-service/src/main/docker/Dockerfile
+/product-service/src/main/docker/Dockerfile
